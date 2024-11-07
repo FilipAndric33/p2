@@ -1,14 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from '../pages/homepage/HomePage';
+import MoviePage from '../pages/movie page/MoviePage';
 import Navbar from '../components/Navbar';
+import ShowPage from "../pages/shows page/ShowPage";
 
 const AppRouter: React.FC = () => {
     return (
         <Router>
             <Navbar />
             <Routes>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/" element={<MoviePage />} />
+                <Route path="/showpage" element={<ShowPage />} />
             </Routes>
         </Router>
     )

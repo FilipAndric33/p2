@@ -1,14 +1,14 @@
 import { httpClient } from "./http.service";
 import { Movie } from "../models/movies";
 
-export const fetchMovies= async (): Promise<Movie[]> => {
+export const fetchMovies= async (): Promise<Movie[] | undefined> => {
     try {
-        const response = await httpClient.get<Movie[]>("https://api.themoviedb.org/3/movie");
+        const response = await httpClient.get<Movie[]>("3/movie/popular");
         const movies: Movie[] = response.data;
         console.log(movies);
-        return movies;
+        // @ts-ignore
+        return movies.results;
     } catch (error) {
         console.log(error);
-        return [];
     }
 }

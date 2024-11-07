@@ -5,7 +5,7 @@ const Navbar: React.FC = () => {
     return(
         <div className={"navbar"}>
             <Link to={"/"}>Movies</Link>
-            <Link to={"/ShowsPage"}>Shows</Link>
+            <Link to={"/showpage"}>Shows</Link>
         </div>
     )
 }
