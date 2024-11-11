@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MoviePage from '../pages/movie page/MoviePage';
-import Navbar from '../components/Navbar';
+import Navbar from '../shared components/Navbar';
 import ShowPage from "../pages/shows page/ShowPage";
 
 const AppRouter: React.FC = () => {

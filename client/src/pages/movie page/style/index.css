@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Merriweather:wght@400;700&display=swap");
+.button {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  background-color: rgba(138.5789473684, 66.5087719298, 206.4912280702, 0.94);
+  color: rgb(125.0996015936, 139.4860557769, 17.5139442231);
+  padding: 12px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.button:hover {
+  background-color: rgba(138.5789473684, 66.5087719298, 206.4912280702, 0.94);
+}
+.button--secondary {
+  background-color: transparent;
+  border: 2px solid rgba(87, 35, 136, 0.94);
+  color: rgba(87, 35, 136, 0.94);
+}
+.button--secondary:hover {
+  background-color: rgba(138.5789473684, 66.5087719298, 206.4912280702, 0.94);
+}
+
+.movie_card {
+  display: flex;
+}

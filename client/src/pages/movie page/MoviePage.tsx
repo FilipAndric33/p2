@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { fetchMovies } from "../../services/movies.service";
 import {Movie} from "../../models/movies";
 import MovieList from "./components/MovieList";
+import "./style/index.scss";
 
 const MoviePage: React.FC = () => {
     const [movies, setMovies] = useState<Movie[] | undefined>();
@@ -19,7 +20,7 @@ const MoviePage: React.FC = () => {
     }, []);
 
     return(
-        <div>
+        <div className={"movie_page"}>
             {movies && movies.map((movie) => (
                 <MovieList key={movie.id} movie={movie} />
             ))}

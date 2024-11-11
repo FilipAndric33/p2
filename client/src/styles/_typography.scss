@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
+$font-family-header: "Montserrat", sans-serif;
+$font-family-body: "Merriweather", serif;
+
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 20px;
+$font-size-xl: 24px;
+$font-size-xxl: 32px;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+@mixin font-style($size, $weight: $font-weight-normal, $family: $font-family-body) {
+  font-size: $size;
+  font-weight: $weight;
+  font-family: $family;
+}

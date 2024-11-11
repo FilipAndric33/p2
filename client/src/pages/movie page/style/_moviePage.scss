@@ -1,0 +1,9 @@
+@use '../../../styles/button';
+@use '../../../styles/typography';
+@use '../../../styles/spacing';
+
+.movie_page {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
