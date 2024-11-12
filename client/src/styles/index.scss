@@ -1,14 +1,14 @@
-@use 'color';
+@use 'colors';
 @use 'spacing';
 @use 'typography';
-@use 'button';
+@use 'buttons';
 
 body {
   margin: 0;
   padding: spacing.$spacing-md;
   font-family: typography.$font-family-body;
-  background-color: color.$background-color;
-  color: color.$text-color;
+  background-color: colors.$background-color;
+  color: colors.$text-color;
 }
 
 #root {

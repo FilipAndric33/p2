@@ -1,11 +1,11 @@
-@use 'color';
+@use 'colors';
 @use 'typography';
 @use 'spacing';
 
 .button {
   @include typography.font-style(typography.$font-size-md, typography.$font-weight-bold, typography.$font-family-header);
-  background-color: color.$primary-color-lighten;
-  color: color.$text-color-darken;
+  background-color: colors.$primary-color-lighten;
+  color: colors.$text-color-darken;
   padding: spacing.$spacing-sm spacing.$spacing-md;
   border: none;
   border-radius: 4px;
@@ -14,16 +14,16 @@
 
 
   &:hover {
-    background-color: color.$primary-color-lighten;
+    background-color: colors.$primary-color-lighten;
   }
 
   &--secondary {
     background-color: transparent;
-    border: 2px solid color.$primary-color;
-    color: color.$primary-color;
+    border: 2px solid colors.$primary-color;
+    color: colors.$primary-color;
 
     &:hover {
-      background-color: color.$primary-color-lighten;
+      background-color: colors.$primary-color-lighten;
     }
   }
 

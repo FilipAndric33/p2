@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MoviePage from '../pages/movie page/MoviePage';
+import MoviePage from '../pages/moviePage/MoviePage';
 import Navbar from '../shared components/Navbar';
-import ShowPage from "../pages/shows page/ShowPage";
+import ShowPage from "../pages/tvShowPage/ShowPage";
 
 const AppRouter: React.FC = () => {
     return (

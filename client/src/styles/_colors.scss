@@ -4,7 +4,8 @@ $background-color: rgb(141, 146, 151);
 $primary-color: rgba(107, 47, 163, 0.94);
 $primary-color-lighten: color.adjust($primary-color, $lightness: 20%);
 $secondary-color: rgba(32, 48, 101, 0.9);
+$secondary-color-lighten: color.adjust($secondary-color, $lightness: 40%);
 
 $text-color: rgb(223, 222, 87);
-$text-color-darken: color.adjust($text-color, $lightness: -20%);
+$text-color-darken: color.adjust($text-color, $lightness: -70%);
 $border-color: rgb(175, 186, 244);
