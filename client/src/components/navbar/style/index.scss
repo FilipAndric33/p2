@@ -1,0 +1,14 @@
+@use "../../../styles/spacing";
+@use "../../../styles/colors";
+@use "../../../styles/typography";
+@use "../../../styles/buttons";
+
+.navbar {
+  background-color: colors.$primary-color;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-bottom: spacing.$spacing-xxl;
+}

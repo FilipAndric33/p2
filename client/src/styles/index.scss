@@ -5,14 +5,12 @@
 
 body {
   margin: 0;
-  padding: spacing.$spacing-md;
   font-family: typography.$font-family-body;
   background-color: colors.$background-color;
   color: colors.$text-color;
 }
 
 #root {
-  padding: spacing.$spacing-lg;
   max-width: 1400px;
   margin: 0 auto;
 }

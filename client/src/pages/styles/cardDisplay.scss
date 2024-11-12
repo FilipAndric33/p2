@@ -1,0 +1,10 @@
+@use '../../styles/buttons';
+@use '../../styles/typography';
+@use '../../styles/spacing';
+
+.page {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}

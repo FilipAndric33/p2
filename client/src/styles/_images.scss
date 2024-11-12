@@ -1,4 +1,7 @@
+@use 'spacing';
+
 img {
   width: 200px;
   border-radius: 20px;
+  margin: 0 spacing.$spacing-xs
 }

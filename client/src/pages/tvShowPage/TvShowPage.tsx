@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import { fetchShows } from "../../services/api/shows.service";
 import { Show } from "../../models/shows";
-import ShowList from "./components/ShowList";
+import ShowList from "../../components/tvShowList/tvShowList";
+import '../styles/cardDisplay.scss';
 
-const MoviePage: React.FC = () => {
+const TvShowPage: React.FC = () => {
     const [shows, setShows] = useState<Show[] | undefined>();
+
     useEffect(() => {
-        const getMovies = async () => {
+        const getShows = async () => {
             try {
                 const response = await fetchShows();
                 setShows(response);
@@ -15,11 +17,11 @@ const MoviePage: React.FC = () => {
             }
         }
 
-        getMovies();
+        getShows();
     }, []);
 
     return(
-        <div>
+        <div className={"page"}>
             {shows && shows.map((show) => (
                 <ShowList key={show.id} show={show} />
             ))}
@@ -27,4 +29,4 @@ const MoviePage: React.FC = () => {
     )
 }
 
-export default MoviePage;
+export default TvShowPage;

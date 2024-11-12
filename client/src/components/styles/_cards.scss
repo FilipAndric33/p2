@@ -1,17 +1,17 @@
-@use '../../../styles/buttons';
-@use '../../../styles/typography';
-@use '../../../styles/spacing';
-@use '../../../styles/colors';
+@use '../../styles/buttons';
+@use '../../styles/typography';
+@use '../../styles/spacing';
+@use '../../styles/colors';
 
-.movie_card {
+.card {
   background-color: colors.$primary-color;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 500px;
+  width: 45%;
   font-size: typography.$font-size-sm;
   height: 300px;
-  margin: spacing.$spacing-md spacing.$spacing-lg;
+  margin: spacing.$spacing-md spacing.$spacing-md;
   padding: spacing.$spacing-sm;
   border: 1px solid colors.$border-color;
   border-radius: 20px;
