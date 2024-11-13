@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { Show } from '../../models/shows';
 import './style/index.scss';
 import { useBalloonVisibility } from "../../services/hooks/useBalloonVisibility.service";
+import { Rating } from '../rating/Rating';
 
 const TVShowList = ({ show }: {show: Show}) => {
     const [isOverlayVisible, setIsOverlayVisible] = useState(false);
-    const { balloonRef, handleBalloonVisibility } = useBalloonVisibility(isOverlayVisible, setIsOverlayVisible);
+    const { balloonRef, handleBalloonVisibility, isBalloonVisible } = useBalloonVisibility(isOverlayVisible, setIsOverlayVisible);
 
     return (
         <>
@@ -21,7 +22,7 @@ const TVShowList = ({ show }: {show: Show}) => {
                         <p className={"overview"}><strong>Overview:</strong> {show.overview}</p>
                         <span className={"show_more button button--secondary"}
                               onClick={handleBalloonVisibility}><strong>Show more</strong></span>
-                        <div className={`balloon ${isOverlayVisible ? 'visible' : ''}`} ref={balloonRef}>
+                        <div className={`balloon ${isBalloonVisible ? 'visible' : ''}`} ref={balloonRef}>
                             <p className={"full_overview"}><strong>Overview:</strong> {show.overview}</p>
                         </div>
                     </div>
@@ -30,7 +31,7 @@ const TVShowList = ({ show }: {show: Show}) => {
                         <p><strong>Popularity:</strong> {show.popularity}</p>
                     </div>
                 </div>
-                <button className={"button button--secondary"}>Rate</button>
+                <Rating setIsOverlayVisible={setIsOverlayVisible} />
             </div>
         </>
     );
