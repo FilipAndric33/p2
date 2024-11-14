@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRating } from '../../services/hooks/useRating.service';
+import { useRating } from '../../hooks/useRating';
 import './style/index.scss';
 
 interface RatingProps {

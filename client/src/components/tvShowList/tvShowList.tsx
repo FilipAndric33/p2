@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Show } from '../../models/shows';
 import './style/index.scss';
-import { useBalloonVisibility } from "../../services/hooks/useBalloonVisibility.service";
+import { useBalloonVisibility } from "../../hooks/useBalloonVisibility";
 import { Rating } from '../rating/Rating';
 
 const TVShowList = ({ show }: {show: Show}) => {

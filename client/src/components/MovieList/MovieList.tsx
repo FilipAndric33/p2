@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Movie } from '../../models/movies';
-import { useBalloonVisibility } from "../../services/hooks/useBalloonVisibility.service";
+import { useBalloonVisibility } from "../../hooks/useBalloonVisibility";
 import { Rating } from '../rating/Rating';
 import './style/index.scss';
 
