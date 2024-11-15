@@ -3,7 +3,7 @@
   .carousel {
     width: 100vw;
     height: 64vh;
-    overflow-x: scroll;
+    overflow-x: hidden;
     scroll-snap-type: x mandatory;
     display: flex;
     align-items: center;

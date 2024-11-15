@@ -31,7 +31,7 @@ const TVShowList = ({ show }: {show: Show}) => {
                         <p><strong>Popularity:</strong> {show.popularity}</p>
                     </div>
                 </div>
-                <Rating setIsOverlayVisible={setIsOverlayVisible} />
+                <Rating/>
             </div>
         </>
     );
