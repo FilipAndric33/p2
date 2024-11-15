@@ -1,0 +1,12 @@
+  @use "spacing";
+
+  .carousel {
+    width: 100vw;
+    height: 64vh;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    align-items: center;
+    scroll-behavior: smooth;
+    max-height: 60vmin;
+}

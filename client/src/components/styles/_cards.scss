@@ -8,14 +8,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 45%;
+  min-width: 36vw;
   font-size: typography.$font-size-sm;
-  height: 300px;
-  margin: spacing.$spacing-md spacing.$spacing-md;
-  padding: spacing.$spacing-sm;
+  height: 56vmin;
   border: 1px solid colors.$border-color;
-  border-radius: 20px;
   position: relative;
+  margin: 0 spacing.$spacing-xxs;
+
+  .ratingContainer {
+    height: 90%;
+    padding: spacing.$spacing-sm spacing.$spacing-xs;
+  }
+  .info {
+    margin: 0 spacing.$spacing-xs;
+  }
 
   .overview {
     display: -webkit-box;

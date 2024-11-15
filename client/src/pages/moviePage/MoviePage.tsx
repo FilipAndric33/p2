@@ -2,10 +2,12 @@ import React, {useEffect, useState} from 'react';
 import { fetchMovies } from "../../services/movies.service";
 import {Movie} from "../../models/movies";
 import MovieList from "../../components/MovieList/MovieList";
-import '../styles/cardDisplay.scss';
+import {useCarousels} from "../../hooks/useCarousels";
 
 const MoviePage: React.FC = () => {
     const [movies, setMovies] = useState<Movie[] | undefined>();
+    const carousels = useCarousels(movies || []);
+
     useEffect(() => {
         const getMovies = async () => {
             try {
@@ -21,8 +23,12 @@ const MoviePage: React.FC = () => {
 
     return(
         <div className={"page"}>
-            {movies && movies.map((movie) => (
-                <MovieList key={movie.id} movie={movie} />
+            {carousels.map((carouselMovies, index) => (
+                <div className={`carousel carousel-${index}`} key={index}>
+                    {carouselMovies.map((movie: Movie, index) => (
+                        <MovieList movie={movie} key={index}/>
+                    ))}
+                </div>
             ))}
         </div>
     )

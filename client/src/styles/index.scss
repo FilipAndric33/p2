@@ -2,8 +2,10 @@
 @use 'spacing';
 @use 'typography';
 @use 'buttons';
+@use 'carousel';
 
 body {
+  overflow-x: scroll;
   margin: 0;
   font-family: typography.$font-family-body;
   background-color: colors.$background-color;
@@ -11,13 +13,16 @@ body {
 }
 
 #root {
-  max-width: 1400px;
   margin: 0 auto;
 }
 
 .page {
-  display: flex;
-  flex-wrap: wrap;
   width: 100%;
-  justify-content: space-around;
+
+  img {
+    width: 28vmin;
+    height: 56vmin;
+    object-fit: cover;
+    object-position: center;
+  }
 }

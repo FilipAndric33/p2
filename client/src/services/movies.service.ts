@@ -6,7 +6,6 @@ export const fetchMovies= async (): Promise<Movie[] | undefined> => {
     try {
         const response = await httpClient.get<FetchedResults<Movie>>("3/movie/popular");
         const movies: FetchedResults<Movie> = response.data;
-        console.log(movies);
         return movies.results;
     } catch (error) {
         console.log(error);
