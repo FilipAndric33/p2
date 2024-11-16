@@ -1,9 +1,7 @@
-import {Movie} from "../models/movies";
-
-export const useCarousels = (movies: Movie[]) => {
-    const carousels: Movie[][] = [];
-    for(let i = 0; i < movies.length; i += 10) {
-        carousels.push(movies.slice(i, i + 10));
+export const useCarousels = (content: any) => {
+    const carousels: [][] = [];
+    for(let i = 0; i < content.length; i += 10) {
+        carousels.push(content.slice(i, i + 10));
     }
 
     return carousels;
