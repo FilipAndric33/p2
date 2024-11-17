@@ -3,6 +3,7 @@
 @use 'typography';
 @use 'buttons';
 @use 'carousel';
+@use 'screens';
 
 body {
   overflow-x: scroll;
@@ -18,5 +19,20 @@ body {
 
 .page {
   width: 100%;
+
+}
+
+@media (min-width: screens.$phone-min) and (max-width: screens.$phone-max) {
+}
+
+@media (min-width: screens.$tablet-min) and (max-width: screens.$tablet-max) {
+
+}
+
+@media (min-width: screens.$smallDesktop-min) and (max-width: screens.$smallDesktop-max) {
+
+}
+
+@media (min-width: screens.$bigDesktop-min) and (max-width: screens.$bigDesktop-max) {
 
 }

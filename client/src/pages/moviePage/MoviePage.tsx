@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useRef } from 'react';
 import { fetchMovies } from "../../services/movies.service";
 import {Movie} from "../../models/movies";
-import MovieList from "../../components/MovieList/MovieList";
+import MovieList from "../../components/movieList/MovieList";
 import { useCarousels } from "../../hooks/useCarousels";
 import { useCarouselScroll } from "../../hooks/useCarouselScroll";
 

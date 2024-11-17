@@ -1,10 +1,10 @@
-$spacing-xxs: 4px;
-$spacing-xs: 8px;
-$spacing-sm: 12px;
-$spacing-md: 16px;
-$spacing-lg: 24px;
-$spacing-xl: 40px;
-$spacing-xxl: 68px;
+$spacing-xxs: 0.25em;
+$spacing-xs: 0.5em;
+$spacing-sm: 0.75em;
+$spacing-md: 1em;
+$spacing-lg: 1.25em;
+$spacing-xl: 1.75em;
+$spacing-xxl: 2.5em;
 
 @mixin spacing($direction, $size) {
   #{$direction}: $size;

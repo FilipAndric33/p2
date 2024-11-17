@@ -12,25 +12,17 @@ const TVShowList = ({ show }: {show: Show}) => {
         <>
             {isOverlayVisible && <div className={"overlay"} />}
             <div className={"card"}>
-                <div>
                     <img src={`https://image.tmdb.org/t/p/w300${show.poster_path}`} alt={show.name}/>
-                </div>
-                <div className={"info"}>
-                    <div className={"top"}>
-                        <h2>{show.name}</h2>
-                        <p><strong>First Air Date:</strong> {show.first_air_date}</p>
+                        <h2 className={"title"}>{show.name}</h2>
+                        <p className={"release"}><strong>First Air Date:</strong> {show.first_air_date}</p>
                         <p className={"overview"}><strong>Overview:</strong> {show.overview}</p>
-                        <span className={"show_more button button--secondary"}
+                        <span className={"showMore button button--secondary"}
                               onClick={handleBalloonVisibility}><strong>Show more</strong></span>
                         <div className={`balloon ${isBalloonVisible ? 'visible' : ''}`} ref={balloonRef}>
-                            <p className={"full_overview"}><strong>Overview:</strong> {show.overview}</p>
+                            <p className={"fullOverview"}><strong>Overview:</strong> {show.overview}</p>
                         </div>
-                    </div>
-                    <div className={"bottom"}>
-                        <p><strong>Average Vote:</strong> {show.vote_average}</p>
-                        <p><strong>Popularity:</strong> {show.popularity}</p>
-                    </div>
-                </div>
+                        <p className={"avg"}><strong>Average Vote:</strong> {show.vote_average}</p>
+                        <p className={"popularity"}><strong>Popularity:</strong> {show.popularity}</p>
                 <Rating/>
             </div>
         </>

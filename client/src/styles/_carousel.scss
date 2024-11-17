@@ -1,4 +1,5 @@
 @use "spacing";
+@use "screens";
 
 .carousel {
   width: 100vw;
@@ -7,15 +8,31 @@
   scroll-snap-type: x mandatory;
   display: flex;
   align-items: center;
-  scroll-behavior: inherit;
+  scroll-behavior: smooth;
   max-height: 60vmin;
+}
 
-  img {
-    width: 28vmin;
-    height: 56vmin;
-    object-fit: cover;
-    object-position: 100% 50%;
-    border-bottom-left-radius: 15px;
-    border-top-left-radius: 15px;
+
+@media (min-width: screens.$phone-min) and (max-width: screens.$phone-max) {
+  .carousel {
+    width: 100%;
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: auto;
+    max-height: none;
+    position: relative;
   }
+}
+
+@media (min-width: screens.$tablet-min) and (max-width: screens.$tablet-max) {
+
+}
+
+@media (min-width: screens.$smallDesktop-min) and (max-width: screens.$smallDesktop-max) {
+
+}
+
+@media (min-width: screens.$bigDesktop-min) and (max-width: screens.$bigDesktop-max) {
+
 }

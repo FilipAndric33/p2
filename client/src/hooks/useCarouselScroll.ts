@@ -28,14 +28,6 @@ export const useCarouselScroll = (carouselRefs: MutableRefObject<(HTMLDivElement
                 const x = e.clientX;
                 const distance = (x - startX.current) * multiplier;
                 carousel.scrollLeft = scrollLeft.current - distance;
-
-                const images = carousel.querySelectorAll("img");
-                images.forEach((img) => {
-                    const carouselWidth = carousel.offsetWidth;
-                    const scrollRatio = carousel.scrollLeft / (carousel.scrollWidth - carouselWidth) * 100;
-                    const newPosition = 100 - scrollRatio;
-                    img.style.objectPosition = `${newPosition}% 50%`;
-                });
             }
         }
 
@@ -49,15 +41,15 @@ export const useCarouselScroll = (carouselRefs: MutableRefObject<(HTMLDivElement
         }
 
         const attachEventListeners = (carousel: HTMLDivElement, index: number) => {
-            carousel.addEventListener("mousedown", (e) => handleMouseDown(e, index));
-            carousel.addEventListener("mouseup", () => handleMouseUp(index));
-            carousel.addEventListener("mousemove", (e) => handleMouseMove(e, index));
+            carousel.addEventListener("pointerdown", (e) => handleMouseDown(e, index));
+            carousel.addEventListener("pointerup", () => handleMouseUp(index));
+            carousel.addEventListener("pointermove", (e) => handleMouseMove(e, index));
         }
 
         const detachEventListeners = (carousel: HTMLDivElement, index: number) => {
-            carousel.removeEventListener("mousedown", (e) => handleMouseDown(e, index));
-            carousel.removeEventListener("mouseup", () => handleMouseUp(index));
-            carousel.removeEventListener("mousemove", (e) => handleMouseMove(e, index));
+            carousel.removeEventListener("pointerdown", (e) => handleMouseDown(e, index));
+            carousel.removeEventListener("pointerup", () => handleMouseUp(index));
+            carousel.removeEventListener("pointermove", (e) => handleMouseMove(e, index));
         }
 
         stableRefs.forEach((el, i) => {

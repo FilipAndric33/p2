@@ -1,12 +1,10 @@
 import React from 'react';
 import { useRating } from '../../hooks/useRating';
-import './style/index.scss';
 
 export const Rating: React.FC = () => {
     const {
         currentRating,
         hoveredRating,
-        showThankYouMessage,
         handleStarClick,
         handleStarHover,
         handleStarLeave
@@ -14,7 +12,6 @@ export const Rating: React.FC = () => {
 
     return (
         <div className={"ratingContainer"}>
-            {showThankYouMessage && <p className={"thankYouMessage"}>Thanks for rating!</p>}
             {(
                 <div className={"starRating"}>
                     {[...Array(5)].map((_, index) => (
