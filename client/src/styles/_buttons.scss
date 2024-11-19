@@ -3,34 +3,96 @@
 @use 'spacing';
 @use 'screens';
 
-.button {
-  @include typography.font-style(typography.$font-size-md, typography.$font-weight-bold, typography.$font-family-header);
+button {
+  font-size: typography.$font-size-lg;
+  border-radius: 8px;
   color: white;
-  padding: spacing.$spacing-sm spacing.$spacing-md;
   border: none;
-  border-radius: 1vmin;
-  cursor: pointer;
-  transition: 0.3s;
-  margin: 0 spacing.$spacing-xs;
-  text-decoration: none;
+  padding: spacing.$spacing-xs;
+  background-color: rgba(124, 123, 123, 0.26);
+  transition: 0.3s ease;
+  font-weight: typography.$font-weight-bold;
 
   &:hover {
-    background-color: white;
-    color: colors.$primary-color;
-  }
-
-  &.button--secondary {
-    background-color: white;
-    color: colors.$primary-color;
-    padding: spacing.$spacing-xxs spacing.$spacing-xs;
-
-    &:hover {
-      background-color: colors.$primary-color;
-      color: white;
-    }
+    background-color: rgba(124, 123, 123, 0.8);
   }
 
 }
+
+.watch-now, .more-info {
+  background-color: #ffb700;
+  color: black;
+  padding: spacing.$spacing-xs spacing.$spacing-md;
+
+  &:hover {
+    background-color: #ffb700;
+    color: white;
+  }
+}
+
+.dot {
+  padding: 0.2rem;
+  background-color: white;
+  border-radius: 50%;
+
+  &.active {
+    background-color: #ffb700;
+  }
+}
+
+.previous, .next {
+  padding: spacing.$spacing-sm spacing.$spacing-md;
+  max-width: 50px;
+  max-height: 50px;
+  font-weight: typography.$font-weight-light;
+}
+
+.more-info {
+  border-radius: 10px;
+  padding: spacing.$spacing-sm;
+}
+
+.plus {
+  font-size: 32px;
+  font-weight: typography.$font-weight-light;
+  border-radius: 10px;
+  padding: 0 spacing.$spacing-xxs;
+}
+
+
+.nav-button {
+  font-weight: typography.$font-weight-light;
+  background-color: transparent;
+  border-radius: 0;
+  border-bottom: solid 2px transparent;
+
+  &:hover {
+    border-bottom: solid 2px #ffb700;
+    border-radius: 0;
+    background-color: transparent;
+  }
+}
+
+.sidebar-button {
+  background-color: transparent;
+  font-weight: typography.$font-weight-thin;
+  max-height: 3rem;
+  border-radius: 0;
+  border-right: solid 2px transparent;
+  gap: 1rem;
+
+  &:hover {
+    border-right: solid 2px #ffb700;
+    color: #ffb700;
+    border-radius: 0;
+    background-color: transparent;
+  }
+}
+
+
+
+
+
 
 @media (min-width: screens.$phone-min) and (max-width: screens.$phone-max) {
   .button {

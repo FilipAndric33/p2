@@ -1,0 +1,13 @@
+@use '../../../styles/spacing';
+@use '../../../styles/typography';
+
+.sidebar {
+  height: 100%;
+  gap: spacing.$spacing-xl;
+  padding: spacing.$spacing-xl;
+  font-weight: typography.$font-weight-light;
+}
+
+.sidebar-title {
+  margin: spacing.$spacing-md;
+}

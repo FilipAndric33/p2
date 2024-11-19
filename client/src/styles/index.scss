@@ -2,14 +2,24 @@
 @use 'spacing';
 @use 'typography';
 @use 'buttons';
-@use 'carousel';
 @use 'screens';
+
+:root {
+  line-height: 1.5;
+  font-weight: typography.$font-weight-normal;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
 
 body {
   overflow-x: scroll;
   margin: 0;
-  font-family: typography.$font-family-body;
-  background-color: colors.$background-color;
+  font-family: typography.$font-family-header;
+  background-color: black;
+  background-image: url('../../public/background-comb.png');
+  background-size: cover;
+  background-position: center;
   color: colors.$text-color;
 }
 
@@ -19,20 +29,58 @@ body {
 
 .page {
   width: 100%;
-
 }
 
-@media (min-width: screens.$phone-min) and (max-width: screens.$phone-max) {
+
+.flex {
+  display: flex;
+  flex: 1;
 }
 
-@media (min-width: screens.$tablet-min) and (max-width: screens.$tablet-max) {
-
+.column {
+  flex-direction: column;
 }
 
-@media (min-width: screens.$smallDesktop-min) and (max-width: screens.$smallDesktop-max) {
-
+.space-between {
+  justify-content: space-between;
 }
 
-@media (min-width: screens.$bigDesktop-min) and (max-width: screens.$bigDesktop-max) {
+.align-items {
+  align-items: center;
+}
 
+.center-container {
+  padding: 50px;
+}
+
+h1, h3, h4 {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  margin-left: spacing.$spacing-lg;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(60%);
+  z-index: -1;
+  opacity: 1;
+  border-radius: 10px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-icon {
+  color: rgba(161, 161, 161);
 }

@@ -1,0 +1,17 @@
+@use '../../../styles/spacing';
+
+.card-container {
+  position: relative;
+  max-width: 240px;
+  min-height: 300px;
+  margin: spacing.$spacing-sm;
+  gap: spacing.$spacing-xxl;
+  padding: spacing.$spacing-md spacing.$spacing-sm;
+  box-sizing: border-box;
+}
+
+.card-bottom {
+  max-height: 30%;
+  align-items: center;
+}
+

@@ -1,0 +1,29 @@
+@use '../../../styles/spacing';
+
+.progress-dots {
+  justify-content: center;
+  background-color: rgba(124, 123, 123, 0.26);
+  max-width: 10%;
+  padding: spacing.$spacing-xs 0;
+  border-radius: 4px;
+  gap: 0.5rem;
+}
+
+.slide-show {
+  margin: spacing.$spacing-xl;
+  gap: spacing.$spacing-xxl;
+  min-height: 33vh;
+  padding: spacing.$spacing-xl;
+  position: relative;
+}
+
+.slideshow-bottom {
+  max-height: 5vh;
+  align-items: center;
+}
+
+.watchlist {
+  display: inline;
+  max-width: 160px;
+  padding: 0 spacing.$spacing-xxs;
+}

@@ -4,11 +4,23 @@
 @use "../../../styles/buttons";
 
 .navbar {
-  background-color: colors.$primary-color;
   height: 12vmin;
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
   margin-bottom: spacing.$spacing-xl;
+}
+
+.search-box {
+  justify-content: space-around;
+  max-width: 30%;
+  padding: spacing.$spacing-xs spacing.$spacing-xs;
+  border-radius: 10px;
+  background-color: rgb(55, 55, 55);
+}
+
+input {
+  border: none;
+  background-color: transparent;
 }
