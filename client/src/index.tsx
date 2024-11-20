@@ -7,6 +7,8 @@ import './styles/index.scss';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <div>
+      <img src={'/background-comb.png'} className={'body-image'} />
+      <img src={'/background-comb.png'} className={'body-image'} />
       <AppRouter />
     </div>
   </StrictMode>,

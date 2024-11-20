@@ -30,7 +30,7 @@ const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
         <div
           className={'background-image'}
           style={{
-            backgroundImage: `url(https://image.tmdb.org/t/p/w300${content[currentIndex].poster_path})`,
+            backgroundImage: `url(https://image.tmdb.org/t/p/original${content[currentIndex].backdrop_path})`,
           }}
         />
         <div>

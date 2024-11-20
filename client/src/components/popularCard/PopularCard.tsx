@@ -16,7 +16,7 @@ const PopularCard: React.FC<PopularCardProps> = ({ content }) => {
       <div
         className={'background-image'}
         style={{
-          backgroundImage: `url(https://image.tmdb.org/t/p/w300${content.poster_path})`,
+          backgroundImage: `url(https://image.tmdb.org/t/p/original${content.poster_path})`,
         }}
       ></div>
       <div>

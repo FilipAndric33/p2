@@ -7,8 +7,12 @@ import './style/index.scss';
 const Sidebar = () => {
   return (
     <div className={'sidebar flex column space-between'}>
-      <div>
-        <img src={'honey-logo.png'} /><p>Honey Movies</p>
+      <div className={'logo-container flex align-items'}>
+        <img src={'honey-logo.png'} />
+        <div className={'logo-text'}>
+          Honey <br />
+          Movies
+        </div>
       </div>
       <Menu />
       <Library />

@@ -3,6 +3,7 @@
 @use 'typography';
 @use 'buttons';
 @use 'screens';
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
 :root {
   line-height: 1.5;
@@ -16,8 +17,7 @@ body {
   overflow-x: scroll;
   margin: 0;
   font-family: typography.$font-family-header;
-  background-color: black;
-  background-image: url('../../public/background-comb.png');
+  background-color: colors.$background-color;
   background-size: cover;
   background-position: center;
   color: colors.$text-color;
@@ -83,4 +83,20 @@ p {
 
 .nav-icon {
   color: rgba(161, 161, 161);
+}
+
+.body-image {
+  position: absolute;
+  z-index: -1;
+  opacity: 70%;
+}
+
+.body-image:nth-of-type(2) {
+  transform: translate(-5%, 40%) rotate(-120deg);
+}
+
+.logo-text {
+  font-size: typography.$font-size-xxl;
+  font-family: 'Luckiest Guy', sans-serif;
+  color: colors.$primary-color;
 }
