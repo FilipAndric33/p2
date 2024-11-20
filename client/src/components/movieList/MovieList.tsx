@@ -1,31 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { Movie } from '../../models/movies';
-import { fetchMovies } from '../../services/movies.service';
+import React from 'react';
 import SlideShow from '../slideShow/SlideShow';
 import PopularCard from '../popularCard/PopularCard';
+import { useGetMovies } from '../../hooks/useGetMovies';
+import { useSetSlideShowContent } from '../../hooks/useSetSlideShowContent';
 
 const MovieList = () => {
-  const [movies, setMovies] = useState<Movie[]>([]);
-  const [slideShowContent, setSlideShowContent] = useState<Movie[]>([]);
-
-  useEffect(() => {
-    const getMovies = async () => {
-      try {
-        const response = await fetchMovies();
-        if (response) setMovies(response);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-
-    getMovies();
-  }, []);
-
-  useEffect(() => {
-    if (movies && movies.length >= 3) {
-      setSlideShowContent(movies.slice(0, 3));
-    }
-  }, [movies]);
+  const movies = useGetMovies();
+  const slideShowContent = useSetSlideShowContent({ content: movies });
 
   return (
     <div className={'flex column'}>

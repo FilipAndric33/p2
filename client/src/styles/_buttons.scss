@@ -12,6 +12,7 @@ button {
   background-color: colors.$secondary-color;
   transition: 0.3s ease;
   font-weight: typography.$font-weight-bold;
+  cursor: pointer;
 
   &:hover {
     background-color: colors.$secondary-color-strong;
@@ -42,9 +43,21 @@ button {
 
 .previous, .next {
   padding: spacing.$spacing-sm spacing.$spacing-md;
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 40px;
+  max-height: 40px;
   font-weight: typography.$font-weight-light;
+  font-size: typography.$font-size-md;
+
+  &.showcase {
+    background-color: transparent;
+    padding: 0;
+    margin: 10px;
+    font-size: typography.$font-size-xs;
+
+    &:hover {
+      color: colors.$primary-color;
+    }
+  }
 }
 
 .more-info {
@@ -57,6 +70,7 @@ button {
   font-weight: typography.$font-weight-light;
   border-radius: 10px;
   padding: 0 spacing.$spacing-xxs;
+  width: 20%;
 }
 
 
@@ -90,8 +104,20 @@ button {
   }
 }
 
+.more-info {
+  width: 70%;
+}
 
+.see-more{
+  background-color: transparent;
+  font-size: typography.$font-size-xxs;
+  font-weight: typography.$font-weight-thin;
 
+  &:hover {
+    background-color: transparent;
+    color: colors.$primary-color;
+  }
+}
 
 
 

@@ -1,31 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { Show } from '../../models/shows';
-import { fetchShows } from '../../services/shows.service';
+import React from 'react';
 import SlideShow from '../slideShow/SlideShow';
 import PopularCard from '../popularCard/PopularCard';
+import { useGetShows } from '../../hooks/useGetShows';
+import { useSetSlideShowContent } from '../../hooks/useSetSlideShowContent';
 
 const TVShowList = () => {
-  const [shows, setShows] = useState<Show[]>([]);
-  const [slideShowContent, setSlideShowContent] = useState<Show[]>([]);
-
-  useEffect(() => {
-    const getShows = async () => {
-      try {
-        const response = await fetchShows();
-        if (response) setShows(response);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-
-    getShows();
-  }, []);
-
-  useEffect(() => {
-    if (shows && shows.length >= 3) {
-      setSlideShowContent(shows.slice(0, 3));
-    }
-  }, [shows]);
+  const shows = useGetShows();
+  const slideShowContent = useSetSlideShowContent({ content: shows });
 
   return (
     <div className={'flex column'}>

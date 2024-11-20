@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import TVShowList from '../../components/tvShowList/tvShowList';
 import MovieList from '../../components/movieList/MovieList';
 import Navbar from '../../components/navbar/Navbar';
-import Sidebar from '../../components/sidebar/Sidebar';
+import LeftSidebar from '../../components/leftSidebar/LeftSidebar';
+import RightSidebar from '../../components/rightSidebar/RightSidebar';
 
 const MoviePage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<
@@ -24,13 +25,16 @@ const MoviePage: React.FC = () => {
 
   return (
     <>
-      <div className={'home-page flex'}>
-        <div className={'sidebar-container'}>
-          <Sidebar />
+      <div className={'flex home-page'}>
+        <div className={'left-sidebar'}>
+          <LeftSidebar />
         </div>
         <div className="flex column center-container">
           <Navbar setSelectedCategory={setSelectedCategory} />
           {renderContent()}
+        </div>
+        <div className={'right-sidebar'}>
+          <RightSidebar />
         </div>
       </div>
     </>

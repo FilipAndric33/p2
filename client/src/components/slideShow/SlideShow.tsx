@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { Movie } from '../../models/movies';
 import './style/index.scss';
 import { Show } from '../../models/shows';
+import {
+  faChevronLeft,
+  faChevronRight,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface SlideShowProps {
   content: Show[] | Movie[];
@@ -30,7 +35,7 @@ const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
         <div
           className={'background-image'}
           style={{
-            backgroundImage: `url(https://image.tmdb.org/t/p/original${content[currentIndex].backdrop_path})`,
+            backgroundImage: `url(https://image.tmdb.org/t/p/w780${content[currentIndex].backdrop_path})`,
           }}
         />
         <div>
@@ -43,10 +48,10 @@ const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
 
         <div className={'flex space-between align-items'}>
           <button className={'previous'} onClick={handlePrevious}>
-            &lt;
+            <FontAwesomeIcon icon={faChevronLeft} />
           </button>
           <button className={'next'} onClick={handleNext}>
-            &gt;
+            <FontAwesomeIcon icon={faChevronRight} />
           </button>
         </div>
 

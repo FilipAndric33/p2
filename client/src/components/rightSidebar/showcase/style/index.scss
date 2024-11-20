@@ -1,0 +1,19 @@
+@use '../../../../styles/typography';
+@use '../../../../styles/spacing';
+@use '../../../../styles/colors';
+
+.showcase-content {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.showcase {
+  h5 {
+    padding-left: spacing.$spacing-md;
+  }
+}

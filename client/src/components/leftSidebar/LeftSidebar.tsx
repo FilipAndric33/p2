@@ -4,11 +4,11 @@ import Library from './library/Library';
 import General from './general/General';
 import './style/index.scss';
 
-const Sidebar = () => {
+const LeftSidebar = () => {
   return (
     <div className={'sidebar flex column space-between'}>
       <div className={'logo-container flex align-items'}>
-        <img src={'honey-logo.png'} />
+        <img src={'honey-logo.png'} alt={'logo'} />
         <div className={'logo-text'}>
           Honey <br />
           Movies
@@ -21,4 +21,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default LeftSidebar;
