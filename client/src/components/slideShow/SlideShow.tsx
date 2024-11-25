@@ -7,6 +7,7 @@ import {
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useIsShow } from '../../hooks/useIsShow';
 
 interface SlideShowProps {
   content: Show[] | Movie[];
@@ -14,6 +15,7 @@ interface SlideShowProps {
 
 const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const isShow = useIsShow({ content: content[currentIndex] });
 
   const handleNext = () => {
     setCurrentIndex((currentIndex + 1) % content.length);
@@ -22,8 +24,6 @@ const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
   const handlePrevious = () => {
     setCurrentIndex((currentIndex - 1 + content.length) % content.length);
   };
-
-  const isShow = (item: Show | Movie): boolean => 'first_air_date' in item;
 
   if (!content || content.length === 0) {
     return <div>loading...</div>;
@@ -40,7 +40,7 @@ const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
         />
         <div>
           <h2>
-            {isShow(content[currentIndex])
+            {isShow
               ? (content[currentIndex] as Show).name
               : (content[currentIndex] as Movie).title}
           </h2>

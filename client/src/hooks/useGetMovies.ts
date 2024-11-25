@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { fetchMovies } from '../services/movies.service';
+import { fetchMovies } from '../services/fetchMovies.service';
 import { Movie } from '../models/movies';
 
 export const useGetMovies = () => {

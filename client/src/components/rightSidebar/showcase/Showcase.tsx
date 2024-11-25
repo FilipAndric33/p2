@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { cloneElement, ReactElement, useEffect, useRef } from 'react';
 import './style/index.scss';
 import {
   faChevronLeft,
@@ -12,19 +12,45 @@ interface ShowcaseProps {
 }
 
 const Showcase: React.FC<ShowcaseProps> = ({ children, propName }) => {
-  const showcaseRef = useRef<HTMLDivElement>(null);
+  const scrollRefs = useRef<Map<number, HTMLDivElement | null>>(new Map());
 
   const scrollNext = () => {
-    if (showcaseRef.current) {
-      showcaseRef.current.scrollBy({ left: 150, behavior: 'smooth' });
-    }
+    scrollRefs.current.forEach((scrollContainer) => {
+      if (scrollContainer) {
+        scrollContainer.scrollBy({
+          left: scrollContainer.offsetWidth,
+          behavior: 'smooth',
+        });
+      }
+    });
   };
 
   const scrollPrevious = () => {
-    if (showcaseRef.current) {
-      showcaseRef.current.scrollBy({ left: -150, behavior: 'smooth' });
-    }
+    scrollRefs.current.forEach((scrollContainer) => {
+      if (scrollContainer) {
+        scrollContainer.scrollBy({
+          left: -scrollContainer.offsetWidth,
+          behavior: 'smooth',
+        });
+      }
+    });
   };
+
+  const attachRefs = (children: React.ReactNode) =>
+    React.Children.map(children, (child, index) => {
+      if (React.isValidElement(child)) {
+        if (!scrollRefs.current.has(index)) {
+          scrollRefs.current.set(index, null);
+        }
+        return cloneElement(child as ReactElement, {
+          ref: (el: HTMLDivElement | null) => {
+            scrollRefs.current.set(index, el);
+          },
+        });
+      }
+
+      return child;
+    });
 
   return (
     <div className={'flex column'}>
@@ -42,8 +68,8 @@ const Showcase: React.FC<ShowcaseProps> = ({ children, propName }) => {
           Show more <FontAwesomeIcon icon={faChevronRight} />
         </button>
       </div>
-      <div className={'flex showcase-content'} ref={showcaseRef}>
-        {children}
+      <div className={'flex showcase-content column'}>
+        {attachRefs(children)}
       </div>
     </div>
   );

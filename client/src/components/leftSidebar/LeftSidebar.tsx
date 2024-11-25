@@ -6,7 +6,7 @@ import './style/index.scss';
 
 const LeftSidebar = () => {
   return (
-    <div className={'sidebar flex column space-between'}>
+    <div className={'sidebar'}>
       <div className={'logo-container flex align-items'}>
         <img src={'honey-logo.png'} alt={'logo'} />
         <div className={'logo-text'}>

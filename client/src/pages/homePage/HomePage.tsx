@@ -26,14 +26,14 @@ const MoviePage: React.FC = () => {
   return (
     <>
       <div className={'flex home-page'}>
-        <div className={'left-sidebar'}>
+        <div className={'left-sidebar flex space-between'}>
           <LeftSidebar />
         </div>
         <div className="flex column center-container">
           <Navbar setSelectedCategory={setSelectedCategory} />
           {renderContent()}
         </div>
-        <div className={'right-sidebar'}>
+        <div className={'right-sidebar flex column space-between'}>
           <RightSidebar />
         </div>
       </div>

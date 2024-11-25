@@ -3,7 +3,7 @@ export interface Movie {
   backdrop_path: string;
   belongs_to_collection: Collection | null;
   budget: number;
-  genres: Genre[];
+  genre_ids: number[];
   homepage: string;
   id: number;
   imdb_id: string;
@@ -32,11 +32,6 @@ export interface Collection {
   name: string;
   poster_path: string;
   backdrop_path: string;
-}
-
-export interface Genre {
-  id: number;
-  name: string;
 }
 
 export interface ProductionCompany {

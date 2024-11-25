@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Show } from '../models/shows';
-import { fetchShows } from '../services/shows.service';
+import { fetchShows } from '../services/fetchShows.service';
 
 export const useGetShows = () => {
   const [shows, setShows] = useState<Show[]>([]);

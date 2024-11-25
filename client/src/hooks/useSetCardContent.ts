@@ -6,16 +6,14 @@ interface Props {
   content: Show[] | Movie[];
 }
 
-export const useSetContinueCardContent = ({ content }: Props) => {
-  const [continueCardContent, setContinueCardContent] = useState<
-    Show[] | Movie[]
-  >([]);
+export const useSetCardContent = ({ content }: Props) => {
+  const [cardContent, setCardContent] = useState<Show[] | Movie[]>([]);
 
   useEffect(() => {
     if (content && content.length >= 7) {
-      setContinueCardContent(content.slice(12, 18));
+      setCardContent(content.slice(12, 18));
     }
   }, [content]);
 
-  return continueCardContent;
+  return cardContent;
 };

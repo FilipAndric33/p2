@@ -14,10 +14,3 @@ export interface Show {
   vote_average: number;
   vote_count: number;
 }
-
-export interface ShowsResponse {
-  page: number;
-  results: Show[];
-  total_pages: number;
-  total_results: number;
-}

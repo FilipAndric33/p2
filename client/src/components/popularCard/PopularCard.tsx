@@ -3,13 +3,16 @@ import React from 'react';
 import { Rating } from '../rating/Rating';
 import './style/index.scss';
 import { Movie } from '../../models/movies';
+import { useIsShow } from '../../hooks/useIsShow';
+import { useMatchGenreId } from '../../hooks/useMatchGenreId';
 
 interface PopularCardProps {
   content: Show | Movie;
 }
 
 const PopularCard: React.FC<PopularCardProps> = ({ content }) => {
-  const isShow = (item: Show | Movie): boolean => 'first_air_date' in item;
+  const isShow = useIsShow({ content });
+  const [showGenreNames, movieGenreNames] = useMatchGenreId(content);
 
   return (
     <div className={'flex card-container column space-between'}>
@@ -20,16 +23,14 @@ const PopularCard: React.FC<PopularCardProps> = ({ content }) => {
         }}
       ></div>
       <div>
-        <h4>
-          {isShow(content) ? (content as Show).name : (content as Movie).title}
-        </h4>
+        <h4>{isShow ? (content as Show).name : (content as Movie).title}</h4>
         <Rating />
       </div>
 
       <div className={'flex card-bottom column'}>
         <div className={'flex space-between'} style={{ width: '100%' }}>
-          <div>{isShow(content) ? '10 ep' : ''}</div>
-          <div> avg: {content.vote_average}</div>
+          <div>{isShow ? '10 ep' : ''}</div>
+          <div>{isShow ? showGenreNames[0] : movieGenreNames[0]}</div>
         </div>
         <div className={'flex space-between'} style={{ width: '100%' }}>
           <button className={'plus'}>+</button>
