@@ -24,7 +24,7 @@ const ContinueCard: React.FC<ContinueCardProps> = ({ content }) => {
       </div>
       <div className="flex column space-between" style={{ gap: '6px' }}>
         <div>
-          <h6>
+          <h6 className={'card-title'}>
             {isShow ? (content as Show).name : (content as Movie).title}
           </h6>
           <p style={{ fontSize: '10px' }}>10% left</p>

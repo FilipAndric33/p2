@@ -5,6 +5,7 @@ import './style/index.scss';
 import { Movie } from '../../models/movies';
 import { useIsShow } from '../../hooks/useIsShow';
 import { useMatchGenreId } from '../../hooks/useMatchGenreId';
+import { Link } from 'react-router-dom';
 
 interface PopularCardProps {
   content: Show | Movie;
@@ -13,6 +14,7 @@ interface PopularCardProps {
 const PopularCard: React.FC<PopularCardProps> = ({ content }) => {
   const isShow = useIsShow({ content });
   const [showGenreNames, movieGenreNames] = useMatchGenreId(content);
+  const type = isShow ? 'show' : 'movie';
 
   return (
     <div className={'flex card-container column space-between'}>
@@ -34,7 +36,9 @@ const PopularCard: React.FC<PopularCardProps> = ({ content }) => {
         </div>
         <div className={'flex space-between'} style={{ width: '100%' }}>
           <button className={'plus'}>+</button>
-          <button className={'more-info'}>more info</button>
+          <Link to={`details/${type}/${content.id}`}>
+            <button className={'more-info'}>more info</button>
+          </Link>
         </div>
       </div>
     </div>

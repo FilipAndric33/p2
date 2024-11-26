@@ -111,3 +111,11 @@ p {
 .left-sidebar {
   padding-top: 30px;
 }
+
+.card-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  max-width: 100%;
+}

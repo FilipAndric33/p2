@@ -31,6 +31,10 @@ button {
   }
 }
 
+.more-info {
+  min-height: 15px;
+}
+
 .dot {
   padding: 0.2rem;
   background-color: colors.$text-color;
@@ -60,17 +64,8 @@ button {
   }
 }
 
-.more-info {
-  border-radius: 10px;
-  padding: spacing.$spacing-sm;
-}
-
 .plus {
-  font-size: 32px;
-  font-weight: typography.$font-weight-light;
-  border-radius: 10px;
-  padding: 0 spacing.$spacing-xxs;
-  width: 20%;
+  margin-right: spacing.$spacing-sm;
 }
 
 
@@ -104,10 +99,6 @@ button {
   }
 }
 
-.more-info {
-  width: 70%;
-}
-
 .see-more{
   background-color: transparent;
   font-size: typography.$font-size-xxs;
@@ -118,8 +109,6 @@ button {
     color: colors.$primary-color;
   }
 }
-
-
 
 @media (min-width: screens.$phone-min) and (max-width: screens.$phone-max) {
   .button {

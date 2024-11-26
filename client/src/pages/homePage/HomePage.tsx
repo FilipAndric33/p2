@@ -5,7 +5,7 @@ import Navbar from '../../components/navbar/Navbar';
 import LeftSidebar from '../../components/leftSidebar/LeftSidebar';
 import RightSidebar from '../../components/rightSidebar/RightSidebar';
 
-const MoviePage: React.FC = () => {
+const HomePage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<
     'movies' | 'shows' | 'anime'
   >('movies');
@@ -41,4 +41,4 @@ const MoviePage: React.FC = () => {
   );
 };
 
-export default MoviePage;
+export default HomePage;

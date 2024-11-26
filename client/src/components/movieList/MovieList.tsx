@@ -12,7 +12,7 @@ const MovieList = () => {
     <div className={'flex column'}>
       {slideShowContent && <SlideShow content={slideShowContent} />}
       <h2>Popular on Honey Movies</h2>
-      <div className={'popular-cards-content flex'}>
+      <div className={'popular-cards-content flex space-between'}>
         {movies &&
           movies.length > 0 &&
           movies
