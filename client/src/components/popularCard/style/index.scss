@@ -15,3 +15,17 @@
   align-items: center;
 }
 
+@media (max-width: 770px) {
+  .card-container {
+    width: 90%;
+  }
+
+  .card-bottom {
+    justify-content: center;
+  }
+
+  .plus {
+    width: 15%;
+  }
+
+}

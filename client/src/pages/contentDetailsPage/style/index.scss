@@ -87,3 +87,50 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+
+@media (max-width: 1100px) {
+  .content-details {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 770px) {
+  .content-details {
+    font-size: 0.35rem;
+    .background-image {
+      border-radius: 0;
+    }
+
+    h1 {
+      font-size: 1rem;
+    }
+
+    a {
+      max-height: 10vh;
+    }
+
+    .back-home {
+      margin: spacing.$spacing-sm spacing.$spacing-md;
+      max-width: 15vw;
+    }
+
+    .content-details-content {
+      margin-top: 10%;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .content-details {
+    font-size: 0.3rem;
+
+    h1 {
+      font-size: 0.7rem;
+    }
+
+    .ratingContainer {
+      font-size: 0.3rem;
+    }
+  }
+}

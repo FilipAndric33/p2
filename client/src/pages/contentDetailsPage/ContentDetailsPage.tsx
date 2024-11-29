@@ -53,7 +53,7 @@ const ContentDetailsPage: React.FC = () => {
         </button>
       </Link>
       <div
-        className={'flex align-items'}
+        className={'flex align-items content-details-content'}
         style={{ justifyContent: 'center', maxHeight: '50vh' }}
       >
         <div className={'flex column left-side'}>

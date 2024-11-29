@@ -5,7 +5,3 @@ $spacing-md: 1em;
 $spacing-lg: 1.25em;
 $spacing-xl: 1.75em;
 $spacing-xxl: 2.5em;
-
-@mixin spacing($direction, $size) {
-  #{$direction}: $size;
-}

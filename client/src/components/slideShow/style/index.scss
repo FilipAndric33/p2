@@ -22,8 +22,32 @@
   align-items: center;
 }
 
-.watchlist {
-  display: inline;
-  max-width: 160px;
-  padding: 0 spacing.$spacing-xxs;
+.watchlist-slideshow {
+  max-width: 27%;
+  padding: spacing.$spacing-xs;
+}
+
+@media (max-width: 770px) {
+  .slide-show {
+    min-height: 90vh;
+    margin: 0;
+    padding: spacing.$spacing-xxs;
+    width: 90%;
+
+    h2 {
+      font-size: 0.8rem;
+    }
+
+    .slideshow-arrow-container {
+      max-height: 20%;
+    }
+
+    .slideshow-bottom {
+      max-height: 20%;
+    }
+
+    .progress-dots {
+      max-width: 20%;
+    }
+  }
 }

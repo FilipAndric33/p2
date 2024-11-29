@@ -1,7 +1,8 @@
 @use '../../../styles/spacing';
 @use '../../../styles/typography';
+@use '../../../styles/colors';
 
-.sidebar {
+.left-sidebar {
   height: 100%;
   gap: spacing.$spacing-xl;
   padding: 0 spacing.$spacing-xl;
@@ -10,4 +11,21 @@
 
 .sidebar-title {
   margin: spacing.$spacing-md;
+}
+
+@media (max-width: 1100px) {
+  .left-sidebar-content {
+    display: none;
+    position: absolute;
+
+  }
+
+  .left-sidebar-content.visible {
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+  }
 }

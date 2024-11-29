@@ -1,7 +1,6 @@
 @use 'colors';
 @use 'typography';
 @use 'spacing';
-@use 'screens';
 
 button {
   font-size: typography.$font-size-lg;
@@ -110,34 +109,8 @@ button {
   }
 }
 
-@media (min-width: screens.$phone-min) and (max-width: screens.$phone-max) {
-  .button {
-    padding: spacing.$spacing-xxs spacing.$spacing-xs;
-    font-size: typography.$font-size-sm;
-    border-radius: 4px;
-  }
-}
-
-@media (min-width: screens.$tablet-min) and (max-width: screens.$tablet-max) {
-  .button {
-    padding: spacing.$spacing-xs spacing.$spacing-md;
-    font-size: typography.$font-size-md;
-    border-radius: 6px;
-  }
-}
-
-@media (min-width: screens.$smallDesktop-min) and (max-width: screens.$smallDesktop-max) {
-  .button {
-    padding: spacing.$spacing-sm spacing.$spacing-lg;
-    font-size: typography.$font-size-lg;
-    border-radius: 8px;
-  }
-}
-
-@media (min-width: screens.$bigDesktop-min) and (max-width: screens.$bigDesktop-max) {
-  .button {
-    padding: spacing.$spacing-sm spacing.$spacing-xl;
-    font-size: typography.$font-size-lg;
-    border-radius: 10px;
+@media (max-width: 770px) {
+  button {
+    font-size: typography.$font-size-xxs;
   }
 }

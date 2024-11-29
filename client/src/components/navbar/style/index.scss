@@ -22,5 +22,29 @@
 
 input {
   border: none;
+  max-width: 60%;
   background-color: transparent;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+@media (max-width: 770px) {
+  input {
+    width: 30%;
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .hamburger-menu {
+    display: flex;
+    margin-left: 2vw;
+
+    &:hover {
+      cursor: pointer;
+      color: colors.$primary-color;
+    }
+  }
 }

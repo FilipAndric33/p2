@@ -5,6 +5,7 @@ import { Show } from '../../models/shows';
 import {
   faChevronLeft,
   faChevronRight,
+  faPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useIsShow } from '../../hooks/useIsShow';
@@ -46,7 +47,7 @@ const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
           </h2>
         </div>
 
-        <div className={'flex space-between align-items'}>
+        <div className={'flex space-between align-items slideshow-arrow-container'}>
           <button className={'previous'} onClick={handlePrevious}>
             <FontAwesomeIcon icon={faChevronLeft} />
           </button>
@@ -56,8 +57,8 @@ const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
         </div>
 
         <div className={'slideshow-bottom flex space-between'}>
-          <button className={'flex align-items watchlist'}>
-            <p className={'plus'}>+ </p>
+          <button className={'flex align-items watchlist-slideshow'}>
+            <FontAwesomeIcon icon={faPlus} className={'plus'}/>
             <p>Watchlist</p>
           </button>
           <div className={'progress-dots flex'}>
