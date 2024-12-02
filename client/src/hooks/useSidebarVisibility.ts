@@ -6,7 +6,11 @@ interface Props {
   sidebarRef: React.RefObject<HTMLDivElement>;
 }
 
-export const useSidebarVisibility = ({ openMenu, setOpenMenu, sidebarRef }: Props) => {
+export const useSidebarVisibility = ({
+  openMenu,
+  setOpenMenu,
+  sidebarRef,
+}: Props) => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -15,15 +19,15 @@ export const useSidebarVisibility = ({ openMenu, setOpenMenu, sidebarRef }: Prop
       ) {
         setOpenMenu(false);
       }
+    };
 
-      if (openMenu) {
-        document.addEventListener('mousedown', handleClickOutside);
-      } else {
-        document.removeEventListener('mousedown', handleClickOutside);
-      }
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
+    if (openMenu) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [openMenu, setOpenMenu, sidebarRef]);
 };

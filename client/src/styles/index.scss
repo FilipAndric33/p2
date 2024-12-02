@@ -120,6 +120,32 @@ p {
   max-width: 100%;
 }
 
+@media (max-width: 1100px) {
+  .left-sidebar {
+    display: none;
+    position: absolute;
+
+    &-visible {
+      display: flex;
+      flex-direction: column;
+      top: 0;
+      left: 0;
+      width: 25%;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.89);
+      border-right: solid #303030 1px;
+      border-bottom: solid #303030 1px;
+      border-bottom-right-radius: 10px;
+      z-index: 20;
+    }
+
+  }
+
+  .left-sidebar-content.visible {
+
+  }
+}
+
 @media (max-width: 770px) {
 
   .popular-cards-content {
@@ -148,5 +174,39 @@ p {
   .right-sidebar {
     display: none;
     position: absolute;
+  }
+
+  .left-sidebar-visible {
+    width: 30%;
+  }
+}
+
+@media (max-width: 620px) {
+  .left-sidebar-visible {
+    width: 40%;
+  }
+}
+
+@media (max-width: 425px) {
+  .left-sidebar-visible {
+    width: 50%;
+  }
+}
+
+@media (max-width: 350px) {
+  .left-sidebar-visible {
+    width: 65%;
+  }
+}
+
+@media (min-width: 1700px) {
+  body {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 2100px) {
+  body {
+    font-size: 1.6rem;
   }
 }

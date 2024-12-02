@@ -1,5 +1,10 @@
 import React from 'react';
-import { faClock, faStar, faHeart, faSquareCheck } from '@fortawesome/free-regular-svg-icons';
+import {
+  faClock,
+  faStar,
+  faHeart,
+  faSquareCheck,
+} from '@fortawesome/free-regular-svg-icons';
 import { faDownload, faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

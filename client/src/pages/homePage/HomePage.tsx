@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import TVShowList from '../../components/tvShowList/tvShowList';
 import MovieList from '../../components/movieList/MovieList';
 import Navbar from '../../components/navbar/Navbar';
@@ -28,11 +28,18 @@ const HomePage: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    console.log(openMenu);
+  }, [openMenu]);
+
   return (
     <>
       <div className={'flex home-page'}>
-        <div className={'left-sidebar flex space-between'} ref={sidebarRef}>
-          <LeftSidebar openMenu={openMenu} />
+        <div
+          className={`left-sidebar${openMenu ? '-visible' : ' '} flex space-between`}
+          ref={sidebarRef}
+        >
+          <LeftSidebar />
         </div>
         <div className="flex column center-container">
           <Navbar

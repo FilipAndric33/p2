@@ -3,7 +3,7 @@ import { fetchMovieGenreIds } from '../services/fetchMovieGenreIds.service';
 import { MovieGenres } from '../models/movieGenres';
 
 export const useGetMovieGenres = () => {
-  const [movieGenres, setmovieGenres] = React.useState<
+  const [movieGenres, setMovieGenres] = React.useState<
     MovieGenres[] | undefined
   >([]);
 
@@ -12,7 +12,7 @@ export const useGetMovieGenres = () => {
       try {
         const response = await fetchMovieGenreIds();
         if (response) {
-          setmovieGenres(response.genres);
+          setMovieGenres(response.genres);
         }
       } catch (e) {
         console.log(e);
