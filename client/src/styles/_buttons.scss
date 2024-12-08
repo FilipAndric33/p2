@@ -45,11 +45,14 @@ button {
 }
 
 .previous, .next {
+  display: flex;
   padding: spacing.$spacing-sm spacing.$spacing-md;
   max-width: 40px;
   max-height: 40px;
   font-weight: typography.$font-weight-light;
   font-size: typography.$font-size-md;
+  align-items: center;
+  justify-content: center;
 
   &.showcase {
     background-color: transparent;
@@ -69,6 +72,9 @@ button {
 
 
 .nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: typography.$font-weight-light;
   background-color: transparent;
   border-radius: 0;
@@ -89,6 +95,7 @@ button {
   border-radius: 0;
   border-right: solid 2px transparent;
   gap: 1rem;
+  align-items: center;
 
   &:hover {
     border-right: solid 2px colors.$primary-color;

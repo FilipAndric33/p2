@@ -5,16 +5,15 @@
 
 .navbar {
   height: 12vmin;
-  display: flex;
-  justify-content: space-around;
   align-items: center;
   width: 100%;
-  margin-bottom: spacing.$spacing-xl;
+  max-height: 40px;
 }
 
 .search-box {
-  justify-content: space-around;
-  max-width: 30%;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 15vw;
   padding: spacing.$spacing-xs spacing.$spacing-xs;
   border-radius: 10px;
   background-color: rgb(55, 55, 55);
@@ -40,6 +39,10 @@ input {
       color: colors.$primary-color;
     }
   }
+
+  .search-box {
+    max-width: 20%;
+  }
 }
 
 @media (max-width: 770px) {
@@ -49,6 +52,6 @@ input {
   }
 
   .search-box {
-    font-size: 0.3rem;
+    font-size: 0.45rem;
   }
 }

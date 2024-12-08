@@ -46,12 +46,14 @@ const ContentDetailsPage: React.FC = () => {
           backgroundImage: `url(https://image.tmdb.org/t/p/original${content.backdrop_path})`,
         }}
       />
-      <Link to={'/'}>
-        <button className={'flex align-items back-home space-between'}>
+
+      <button className={'flex align-items back-home space-between'}>
+        <Link to={'/'}>
           <FontAwesomeIcon icon={faChevronLeft} className={'icon'} />
           Back Home
-        </button>
-      </Link>
+        </Link>
+      </button>
+
       <div
         className={'flex align-items content-details-content'}
         style={{ justifyContent: 'center', maxHeight: '50vh' }}

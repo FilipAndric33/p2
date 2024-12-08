@@ -1,10 +1,22 @@
 @use '../../../styles/spacing';
+@use '../../../styles/colors';
 
 .user {
-  margin: spacing.$spacing-xl;
+  margin: 0 spacing.$spacing-xl;
   max-height: 40px;
+  display: flex;
+  align-items: center;
 }
 
 .showcase {
   margin: spacing.$spacing-xl;
+}
+
+.username {
+  align-items: center;
+  gap: 6px;
+
+  &:hover {
+    color: colors.$primary-color;
+  }
 }

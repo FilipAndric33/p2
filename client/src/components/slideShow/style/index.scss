@@ -9,21 +9,31 @@
   gap: 0.5rem;
 }
 
+h2 {
+  margin: 0;
+}
+
+.slideshow-arrow-container {
+  max-height: 20%;
+}
+
 .slide-show {
-  margin: spacing.$spacing-xl;
-  gap: spacing.$spacing-xxl;
-  min-height: 33vh;
+  margin: spacing.$spacing-xl spacing.$spacing-xs;
+  min-height: 40vh;
   padding: spacing.$spacing-xl;
   position: relative;
+  box-sizing: border-box;
+  width: 95%;
 }
 
 .slideshow-bottom {
   max-height: 5vh;
   align-items: center;
+  justify-content: space-between;
 }
 
 .watchlist-slideshow {
-  max-width: 27%;
+  flex: 0 1 auto !important;
   padding: spacing.$spacing-xs;
 }
 
@@ -36,10 +46,6 @@
 
     h2 {
       font-size: 0.8rem;
-    }
-
-    .slideshow-arrow-container {
-      max-height: 20%;
     }
 
     .slideshow-bottom {

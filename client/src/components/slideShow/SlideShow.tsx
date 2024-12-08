@@ -56,9 +56,9 @@ const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
           </button>
         </div>
 
-        <div className={'slideshow-bottom flex space-between'}>
+        <div className={'slideshow-bottom flex'}>
           <button className={'flex align-items watchlist-slideshow'}>
-            <FontAwesomeIcon icon={faPlus} className={'plus'}/>
+            <FontAwesomeIcon icon={faPlus} className={'plus'} />
             <p>Watchlist</p>
           </button>
           <div className={'progress-dots flex'}>

@@ -6,18 +6,13 @@ import {
   faBars,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
 interface NavbarProps {
-  setSelectedCategory: React.Dispatch<
-    React.SetStateAction<'movies' | 'shows' | 'anime'>
-  >;
   setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Navbar: React.FC<NavbarProps> = ({
-  setSelectedCategory,
-  setOpenMenu,
-}) => {
+const Navbar: React.FC<NavbarProps> = ({ setOpenMenu }) => {
   const handleHamburgerClick = () => {
     setOpenMenu((prev) => !prev);
   };
@@ -29,24 +24,15 @@ const Navbar: React.FC<NavbarProps> = ({
         className={'hamburger-menu'}
         onClick={handleHamburgerClick}
       />
-      <button
-        className={'nav-button'}
-        onClick={() => setSelectedCategory('movies')}
-      >
+      <Link to={'/'} className={'nav-button'}>
         Movies
-      </button>
-      <button
-        className={'nav-button'}
-        onClick={() => setSelectedCategory('shows')}
-      >
+      </Link>
+      <Link to={'/ShowPage'} className={'nav-button'}>
         TV Shows
-      </button>
-      <button
-        className={'nav-button'}
-        onClick={() => setSelectedCategory('anime')}
-      >
+      </Link>
+      <Link to={'/Anime'} className={'nav-button'}>
         Anime
-      </button>
+      </Link>
       <div className={'search-box flex'}>
         <FontAwesomeIcon icon={faMagnifyingGlass} className={'nav-icon'} />
         <input placeholder={'search'} />

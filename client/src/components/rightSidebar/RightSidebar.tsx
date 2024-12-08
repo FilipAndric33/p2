@@ -19,13 +19,19 @@ const RightSideBar = () => {
 
   return (
     <>
-      <div className={'user flex'}>
+      <div className={'user flex'} style={{ position: 'relative' }}>
         <FontAwesomeIcon icon={faBell} />
-        <div className={'flex'}>
+        <div
+          className={'flex username'}
+          style={{ position: 'absolute', right: '15%' }}
+        >
           Filip
           <FontAwesomeIcon icon={faChevronDown} />
         </div>
-        <FontAwesomeIcon icon={faUser} />
+        <FontAwesomeIcon
+          icon={faUser}
+          style={{ position: 'absolute', right: 0 }}
+        />
       </div>
       <div className={'showcase'}>
         {continueCardContent && (

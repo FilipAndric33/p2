@@ -34,9 +34,12 @@ const PopularCard: React.FC<PopularCardProps> = ({ content }) => {
           <div>{isShow ? '10 ep' : ''}</div>
           <div>{isShow ? showGenreNames[0] : movieGenreNames[0]}</div>
         </div>
-        <div className={'flex space-between align-items'} style={{ width: '100%' }}>
+        <div
+          className={'flex space-between align-items'}
+          style={{ width: '100%' }}
+        >
           <button className={'plus'}>+</button>
-          <Link to={`details/${type}/${content.id}`}>
+          <Link to={`/details/${type}/${content.id}`}>
             <button className={'more-info'}>more info</button>
           </Link>
         </div>
