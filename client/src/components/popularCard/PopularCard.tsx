@@ -39,7 +39,7 @@ const PopularCard: React.FC<PopularCardProps> = ({ content }) => {
           style={{ width: '100%' }}
         >
           <button className={'plus'}>+</button>
-          <Link to={`/details/${type}/${content.id}`}>
+          <Link to={`details/${type}/${content.id}`}>
             <button className={'more-info'}>more info</button>
           </Link>
         </div>

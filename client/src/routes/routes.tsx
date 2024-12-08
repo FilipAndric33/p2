@@ -9,8 +9,12 @@ const AppRouter: React.FC = () => {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/ShowPage" element={<ShowPage />} />s
+        <Route path="/ShowPage" element={<ShowPage />} />
         <Route path="details/:type/:id" element={<ContentDetailsPage />} />
+        <Route
+          path="/ShowPage/details/:type/:id"
+          element={<ContentDetailsPage />}
+        />
       </Routes>
     </Router>
   );

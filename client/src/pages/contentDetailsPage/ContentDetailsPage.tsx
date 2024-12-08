@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useFindMovieById } from '../../hooks/useFindMovieById';
 import { useFindShowById } from '../../hooks/useFIndShowById';
 import { Show } from '../../models/shows';
@@ -11,9 +11,11 @@ import { faImdb } from '@fortawesome/free-brands-svg-icons';
 import './style/index.scss';
 
 const ContentDetailsPage: React.FC = () => {
+  const navigate = useNavigate();
   const { type, id } = useParams();
   const show = useFindShowById(id!);
   const movie = useFindMovieById(id!);
+
   const [content, setContent] = useState<Show | Movie>();
   const [isShow, setIsShow] = useState<boolean>(false);
 
@@ -35,6 +37,14 @@ const ContentDetailsPage: React.FC = () => {
     };
   }, []);
 
+  const handleBackClick = () => {
+    if (isShow) {
+      navigate('/ShowPage');
+    } else {
+      navigate('/');
+    }
+  };
+
   return content ? (
     <div
       className={'content-details flex column'}
@@ -47,11 +57,12 @@ const ContentDetailsPage: React.FC = () => {
         }}
       />
 
-      <button className={'flex align-items back-home space-between'}>
-        <Link to={'/'}>
-          <FontAwesomeIcon icon={faChevronLeft} className={'icon'} />
-          Back Home
-        </Link>
+      <button
+        className={'flex align-items back-home space-between'}
+        onClick={handleBackClick}
+      >
+        <FontAwesomeIcon icon={faChevronLeft} className={'icon'} />
+        Back Home
       </button>
 
       <div
