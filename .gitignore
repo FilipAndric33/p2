@@ -5,6 +5,7 @@
 .idea
 build.
 build
+.env
 
 # testing
 /coverage
