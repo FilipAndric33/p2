@@ -64,7 +64,6 @@ const ContentDetailsPage: React.FC = () => {
         <FontAwesomeIcon icon={faChevronLeft} className={'icon'} />
         Back Home
       </button>
-
       <div
         className={'flex align-items content-details-content'}
         style={{ justifyContent: 'center', maxHeight: '50vh' }}

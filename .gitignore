@@ -4,6 +4,7 @@
 .pnp.js
 .idea
 build.
+build
 
 # testing
 /coverage
