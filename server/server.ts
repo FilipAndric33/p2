@@ -14,5 +14,5 @@ app.use(express.urlencoded({ extended: true }));
 app.use(AppRouter.getInstance());
 
 app.listen(port, () => {
-  console.log('listening on port 6k');
+  console.log('listening on port 8k');
 });
