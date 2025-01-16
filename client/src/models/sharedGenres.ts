@@ -1,4 +1,4 @@
-export type SharedGenreNames =
+export type sharedGenreNames =
   | 'Animation'
   | 'Comedy'
   | 'Crime'
@@ -8,7 +8,7 @@ export type SharedGenreNames =
   | 'Mystery'
   | 'Western';
 
-export const sharedGenres: SharedGenreNames[][] = [
+export const sharedGenres: sharedGenreNames[][] = [
   ['Animation', 'Comedy', 'Crime', 'Documentary'],
   ['Drama', 'Family', 'Mystery', 'Western'],
 ];

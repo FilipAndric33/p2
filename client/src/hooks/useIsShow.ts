@@ -1,12 +1,12 @@
-import { Show } from '../models/shows';
-import { Movie } from '../models/movies';
+import { show } from '../models/shows';
+import { movie } from '../models/movies';
 
 interface Props {
-  content: Show | Movie;
+  content: show | movie;
 }
 
 export const useIsShow = ({ content }: Props) => {
-  const isShow = (item: Show | Movie): boolean => {
+  const isShow = (item: show | movie): boolean => {
     if (item) {
       return 'first_air_date' in item;
     }

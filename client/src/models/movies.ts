@@ -1,7 +1,7 @@
-export interface Movie {
+export interface movie {
   adult: boolean;
   backdrop_path: string;
-  belongs_to_collection: Collection | null;
+  belongs_to_collection: collection | null;
   budget: number;
   genre_ids: number[];
   homepage: string;
@@ -13,12 +13,12 @@ export interface Movie {
   overview: string;
   popularity: number;
   poster_path: string;
-  production_companies: ProductionCompany[];
-  production_countries: ProductionCountry[];
+  production_companies: productionCompany[];
+  production_countries: productionCountry[];
   release_date: string;
   revenue: number;
   runtime: number;
-  spoken_languages: SpokenLanguage[];
+  spoken_languages: spokenLanguage[];
   status: string;
   tagline: string;
   title: string;
@@ -27,26 +27,26 @@ export interface Movie {
   vote_count: number;
 }
 
-export interface Collection {
+export interface collection {
   id: number;
   name: string;
   poster_path: string;
   backdrop_path: string;
 }
 
-export interface ProductionCompany {
+export interface productionCompany {
   id: number;
   logo_path: string;
   name: string;
   origin_country: string;
 }
 
-export interface ProductionCountry {
+export interface productionCountry {
   iso_3166_1: string;
   name: string;
 }
 
-export interface SpokenLanguage {
+export interface spokenLanguage {
   english_name: string;
   iso_639_1: string;
   name: string;

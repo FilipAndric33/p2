@@ -1,11 +1,11 @@
 import React from 'react';
 import { useGetShows } from '../../../hooks/useGetShows';
 import { useGetMovies } from '../../../hooks/useGetMovies';
-import { SharedGenreNames } from '../../../models/sharedGenres';
+import { sharedGenreNames } from '../../../models/sharedGenres';
 import './style/index.scss';
 
 interface Props {
-  genreName: SharedGenreNames;
+  genreName: sharedGenreNames;
 }
 
 const GenreCard: React.FC<Props> = ({ genreName }) => {

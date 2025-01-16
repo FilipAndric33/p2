@@ -1,12 +1,12 @@
 import React from 'react';
-import { Show } from '../../../models/shows';
-import { Movie } from '../../../models/movies';
+import { show } from '../../../models/shows';
+import { movie } from '../../../models/movies';
 import { useIsShow } from '../../../hooks/useIsShow';
 import { useMatchGenreId } from '../../../hooks/useMatchGenreId';
 import './style/index.scss';
 
 interface CardProps {
-  content: Show | Movie;
+  content: show | movie;
 }
 
 const TopRatedCard: React.FC<CardProps> = ({ content }) => {
@@ -24,7 +24,7 @@ const TopRatedCard: React.FC<CardProps> = ({ content }) => {
           backgroundImage: `url(https://image.tmdb.org/t/p/w300${content.poster_path})`,
         }}
       />
-      <h6 className={'card-title'}>{isShow ? (content as Show).name : (content as Movie).title}</h6>
+      <h6 className={'card-title'}>{isShow ? (content as show).name : (content as movie).title}</h6>
       <div className={'flex column'}>
         <div className={'flex space-between top'}>
           <div>{isShow ? '30ep' : ''}</div>

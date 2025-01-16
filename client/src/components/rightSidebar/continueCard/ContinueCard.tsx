@@ -1,11 +1,11 @@
 import React from 'react';
-import { Show } from '../../../models/shows';
-import { Movie } from '../../../models/movies';
+import { show } from '../../../models/shows';
+import { movie } from '../../../models/movies';
 import './style/index.scss';
 import { useIsShow } from '../../../hooks/useIsShow';
 
 interface ContinueCardProps {
-  content: Show | Movie;
+  content: show | movie;
 }
 
 const ContinueCard: React.FC<ContinueCardProps> = ({ content }) => {
@@ -25,7 +25,7 @@ const ContinueCard: React.FC<ContinueCardProps> = ({ content }) => {
       <div className="flex column space-between" style={{ gap: '6px' }}>
         <div>
           <h6 className={'card-title'}>
-            {isShow ? (content as Show).name : (content as Movie).title}
+            {isShow ? (content as show).name : (content as movie).title}
           </h6>
           <p style={{ fontSize: '10px' }}>10% left</p>
           <div className="progress-bar flex">

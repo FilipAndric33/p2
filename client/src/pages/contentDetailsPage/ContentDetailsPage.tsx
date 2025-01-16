@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useFindMovieById } from '../../hooks/useFindMovieById';
 import { useFindShowById } from '../../hooks/useFIndShowById';
-import { Show } from '../../models/shows';
-import { Movie } from '../../models/movies';
+import { show } from '../../models/shows';
+import { movie } from '../../models/movies';
 import { faChevronLeft, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Rating } from '../../components/rating/Rating';
@@ -16,7 +16,7 @@ const ContentDetailsPage: React.FC = () => {
   const show = useFindShowById(id!);
   const movie = useFindMovieById(id!);
 
-  const [content, setContent] = useState<Show | Movie>();
+  const [content, setContent] = useState<show | movie>();
   const [isShow, setIsShow] = useState<boolean>(false);
 
   useEffect(() => {
@@ -69,7 +69,7 @@ const ContentDetailsPage: React.FC = () => {
         style={{ justifyContent: 'center', maxHeight: '50vh' }}
       >
         <div className={'flex column left-side'}>
-          <h1>{isShow ? (content as Show).name : (content as Movie).title}</h1>
+          <h1>{isShow ? (content as show).name : (content as movie).title}</h1>
           <Rating />
           <p>10M+ views</p>
           <div>

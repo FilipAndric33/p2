@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { fetchMovies } from '../services/fetchMovies.service';
-import { Movie } from '../models/movies';
+import { movie } from '../models/movies';
 
 export const useGetMovies = () => {
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const [movies, setMovies] = useState<movie[]>([]);
 
   useEffect(() => {
     const getMovies = async () => {

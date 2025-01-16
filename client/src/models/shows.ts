@@ -1,4 +1,4 @@
-export interface Show {
+export interface show {
   adult: boolean;
   backdrop_path: string | null;
   genre_ids: number[];

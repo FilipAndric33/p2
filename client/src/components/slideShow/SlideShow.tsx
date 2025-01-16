@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Movie } from '../../models/movies';
+import { movie } from '../../models/movies';
 import './style/index.scss';
-import { Show } from '../../models/shows';
+import { show } from '../../models/shows';
 import {
   faChevronLeft,
   faChevronRight,
@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useIsShow } from '../../hooks/useIsShow';
 
 interface SlideShowProps {
-  content: Show[] | Movie[];
+  content: show[] | movie[];
 }
 
 const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
@@ -42,8 +42,8 @@ const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
         <div>
           <h2>
             {isShow
-              ? (content[currentIndex] as Show).name
-              : (content[currentIndex] as Movie).title}
+              ? (content[currentIndex] as show).name
+              : (content[currentIndex] as movie).title}
           </h2>
         </div>
 

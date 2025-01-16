@@ -1,10 +1,10 @@
 import { useGetMovies } from './useGetMovies';
 import { useEffect, useState } from 'react';
-import { Movie } from '../models/movies';
+import { movie } from '../models/movies';
 
 export const useFindMovieById = (id: string) => {
   const movies = useGetMovies();
-  const [movie, setMovie] = useState<Movie>();
+  const [movie, setMovie] = useState<movie>();
   const idNum = parseInt(id, 10);
 
   useEffect(() => {

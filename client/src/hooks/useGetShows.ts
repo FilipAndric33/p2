@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Show } from '../models/shows';
+import { show } from '../models/shows';
 import { fetchShows } from '../services/fetchShows.service';
 
 export const useGetShows = () => {
-  const [shows, setShows] = useState<Show[]>([]);
+  const [shows, setShows] = useState<show[]>([]);
 
   useEffect(() => {
     const getShows = async () => {

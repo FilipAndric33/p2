@@ -1,14 +1,14 @@
-import { Show } from '../../models/shows';
+import { show } from '../../models/shows';
 import React from 'react';
 import { Rating } from '../rating/Rating';
 import './style/index.scss';
-import { Movie } from '../../models/movies';
+import { movie } from '../../models/movies';
 import { useIsShow } from '../../hooks/useIsShow';
 import { useMatchGenreId } from '../../hooks/useMatchGenreId';
 import { Link } from 'react-router-dom';
 
 interface PopularCardProps {
-  content: Show | Movie;
+  content: show | movie;
 }
 
 const PopularCard: React.FC<PopularCardProps> = ({ content }) => {
@@ -25,7 +25,7 @@ const PopularCard: React.FC<PopularCardProps> = ({ content }) => {
         }}
       ></div>
       <div>
-        <h4>{isShow ? (content as Show).name : (content as Movie).title}</h4>
+        <h4>{isShow ? (content as show).name : (content as movie).title}</h4>
         <Rating />
       </div>
 

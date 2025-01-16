@@ -1,13 +1,13 @@
-import { Movie } from '../models/movies';
-import { Show } from '../models/shows';
+import { movie } from '../models/movies';
+import { show } from '../models/shows';
 import { useEffect, useState } from 'react';
 
 interface Props {
-  content: Movie[] | Show[];
+  content: movie[] | show[];
 }
 
 export const useSetSlideShowContent = ({ content }: Props) => {
-  const [slideShowContent, setSlideShowContent] = useState<Movie[] | Show[]>(
+  const [slideShowContent, setSlideShowContent] = useState<movie[] | show[]>(
     [],
   );
 

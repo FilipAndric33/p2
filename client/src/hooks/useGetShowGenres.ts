@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { fetchShowGenreIds } from '../services/fetchShowGenreIds.service';
-import { ShowGenres } from '../models/showGenres';
+import { showGenres } from '../models/showGenres';
 
 export const useGetShowGenres = () => {
-  const [showGenres, setShowGenres] = React.useState<ShowGenres[] | undefined>(
+  const [showGenres, setShowGenres] = React.useState<showGenres[] | undefined>(
     [],
   );
 

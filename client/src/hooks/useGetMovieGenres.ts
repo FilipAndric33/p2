@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { fetchMovieGenreIds } from '../services/fetchMovieGenreIds.service';
-import { MovieGenres } from '../models/movieGenres';
+import { movieGenres } from '../models/movieGenres';
 
 export const useGetMovieGenres = () => {
   const [movieGenres, setMovieGenres] = React.useState<
-    MovieGenres[] | undefined
+    movieGenres[] | undefined
   >([]);
 
   useEffect(() => {

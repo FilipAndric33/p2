@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
 import { useGetShowGenres } from './useGetShowGenres';
-import { MovieGenreNames } from '../models/movieGenres';
-import { Show } from '../models/shows';
-import { Movie } from '../models/movies';
+import { movieGenreNames } from '../models/movieGenres';
+import { show } from '../models/shows';
+import { movie } from '../models/movies';
 import { useIsShow } from './useIsShow';
 import { useGetMovieGenres } from './useGetMovieGenres';
-import { ShowGenreNames } from '../models/showGenres';
+import { showGenreNames } from '../models/showGenres';
 
-export const useMatchGenreId = (content: Show | Movie) => {
+export const useMatchGenreId = (content: show | movie) => {
   const isShow = useIsShow({ content });
   const movieGenreArray = useGetMovieGenres();
   const showGenreArray = useGetShowGenres();
-  const [showGenreNames, setShowGenreNames] = useState<ShowGenreNames[]>([]);
-  const [movieGenreNames, setMovieGenreNames] = useState<MovieGenreNames[]>([]);
+  const [showGenreNames, setShowGenreNames] = useState<showGenreNames[]>([]);
+  const [movieGenreNames, setMovieGenreNames] = useState<movieGenreNames[]>([]);
 
   useEffect(() => {
     if (isShow && showGenreArray) {
@@ -21,7 +21,7 @@ export const useMatchGenreId = (content: Show | Movie) => {
           const genre = showGenreArray.find((genre) => genre.id === id);
           return genre ? genre.name : null;
         })
-        .filter(Boolean) as ShowGenreNames[];
+        .filter(Boolean) as showGenreNames[];
 
       setShowGenreNames(genreNames);
     }
@@ -34,7 +34,7 @@ export const useMatchGenreId = (content: Show | Movie) => {
           const genre = movieGenreArray.find((genre) => genre.id === id);
           return genre ? genre.name : null;
         })
-        .filter(Boolean) as MovieGenreNames[];
+        .filter(Boolean) as movieGenreNames[];
 
       setMovieGenreNames(genreNames);
     }

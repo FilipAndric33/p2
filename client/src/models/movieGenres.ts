@@ -1,9 +1,9 @@
-export interface MovieGenres {
+export interface movieGenres {
   id: number;
-  name: MovieGenreNames;
+  name: movieGenreNames;
 }
 
-export type MovieGenreNames =
+export type movieGenreNames =
   | 'Action'
   | 'Adventure'
   | 'Animation'
