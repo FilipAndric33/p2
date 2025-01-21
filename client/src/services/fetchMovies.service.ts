@@ -1,4 +1,4 @@
-import { httpClient } from './http.service';
+import { httpClient } from './tmdbHttp.service';
 import { movie } from '../models/movies';
 import { FetchedResults } from '../models/fetchedResults';
 
