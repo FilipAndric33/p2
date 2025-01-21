@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
+import { registerUser } from '../../utils/registerUser';
 
 export const RegisterForm: React.FC = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const result = registerUser({ username, email, password });
+    console.log(result);
+  };
+
   return (
-    <form>
+    <form onSubmit={(e) => handleSubmit(e)}>
       <label htmlFor="username">Username</label>
       <input
         type={'text'}
@@ -31,7 +38,7 @@ export const RegisterForm: React.FC = () => {
         onChange={(e) => setPassword(e.target.value)}
         required={true}
       />
-      <button name={'submit'} type={'submit'}>
+      <button name={'submit'} type={'submit'} onClick={handleSubmit}>
         Submit
       </button>
     </form>
