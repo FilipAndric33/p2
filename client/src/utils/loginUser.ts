@@ -1,15 +1,13 @@
 import { serverClient } from '../services/serverHttp.service';
 
 interface props {
-  username: string;
   email: string;
   password: string;
 }
 
-export const registerUser = async ({ username, email, password }: props) => {
+export const loginUser = async ({ email, password }: props) => {
   try {
-    const response = await serverClient.post('register', {
-      username,
+    const response = await serverClient.post('login', {
       email,
       password,
     });
