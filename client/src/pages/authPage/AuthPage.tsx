@@ -13,7 +13,11 @@ const AuthPage: React.FC = () => {
     } else {
       return;
     }
+<<<<<<< Updated upstream
   }, []);
+=======
+  }, [location.pathname]);
+>>>>>>> Stashed changes
   return isRegister ? <RegisterForm /> : <LoginForm />;
 };
 
