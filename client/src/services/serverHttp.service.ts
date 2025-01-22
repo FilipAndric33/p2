@@ -4,8 +4,9 @@ import axios, {
   InternalAxiosRequestConfig,
   AxiosError,
 } from 'axios';
+import { loginInterface } from '../models/loginInterface';
 
-const baseURL = 'https://localhost:443/';
+const baseURL = 'https://35dc-31-223-132-208.ngrok-free.app';
 const refreshUrl = 'token/refresh';
 const MAX_RETRIES = 3;
 
@@ -34,6 +35,15 @@ serverClient.interceptors.request.use(
 
 serverClient.interceptors.response.use(
   (response: AxiosResponse): AxiosResponse => {
+    const data: loginInterface = response.data;
+
+    if (data && data.accessToken && data.refreshToken) {
+      console.log('access: ', data.accessToken);
+      console.log('refresh: ', data.refreshToken);
+
+      localStorage.setItem('accessToken', data.accessToken);
+      localStorage.setItem('refreshToken', data.refreshToken);
+    }
     return response;
   },
   (error: AxiosError) => {
