@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import { registerUser } from '../../utils/registerUser';
+import { useNavigate } from 'react-router-dom';
 
 export const RegisterForm: React.FC = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const result = registerUser({ username, email, password });
+    const result = await registerUser({ username, email, password });
     console.log(result);
+    if (result) {
+      navigate('/login');
+    }
   };
 
   return (
