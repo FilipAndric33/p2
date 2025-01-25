@@ -1,4 +1,4 @@
-import { httpClient } from './http.service';
+import { httpClient } from './tmdbHttp.service';
 import { movieGenres } from '../models/movieGenres';
 
 export const fetchMovieGenreIds = async () => {
