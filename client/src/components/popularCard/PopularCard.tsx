@@ -6,6 +6,7 @@ import { movie } from '../../models/movies';
 import { useIsShow } from '../../hooks/useIsShow';
 import { useMatchGenreId } from '../../hooks/useMatchGenreId';
 import { Link } from 'react-router-dom';
+import { addToWatchlist } from '../../utils/addToWatchlist';
 
 interface PopularCardProps {
   content: show | movie;
@@ -38,7 +39,9 @@ const PopularCard: React.FC<PopularCardProps> = ({ content }) => {
           className={'flex space-between align-items'}
           style={{ width: '100%' }}
         >
-          <button className={'plus'}>+</button>
+          <button className={'plus'} onClick={() => addToWatchlist(content.id)}>
+            +
+          </button>
           <Link to={`details/${type}/${content.id}`}>
             <button className={'more-info'}>more info</button>
           </Link>
