@@ -6,8 +6,8 @@ import axios, {
 } from 'axios';
 import { loginInterface } from '../models/loginInterface';
 
-const baseURL = 'https://35dc-31-223-132-208.ngrok-free.app';
-const refreshUrl = 'token/refresh';
+const baseURL = 'https://fda6-109-245-175-30.ngrok-free.app';
+const refreshUrl = '/token/refresh';
 const MAX_RETRIES = 3;
 
 export const serverClient: AxiosInstance = axios.create({
@@ -24,7 +24,7 @@ serverClient.interceptors.request.use(
     ) {
       const token = localStorage.getItem('accessToken');
       if (token) {
-        config.headers.common['Authorization'] = `Bearer ${token}`;
+        config.headers['Authorization'] = `Bearer ${token}`;
       }
     }
     const fullUrl = `${baseURL}${config.url}`;
@@ -46,7 +46,7 @@ serverClient.interceptors.response.use(
     }
     return response;
   },
-  (error: AxiosError) => {
+  async (error: AxiosError) => {
     const config = error.config as InternalAxiosRequestConfig & {
       retryCount?: number;
     };
@@ -58,12 +58,43 @@ serverClient.interceptors.response.use(
 
     if (
       error.response!.status === 401 &&
-      error.message === 'Token has expired.'
+      (error.response!.data as { error: string }).error === 'Token has expired.'
     ) {
-      config.url = `${baseURL}${refreshUrl}`;
-      return serverClient(config);
-    }
+      const refreshToken = localStorage.getItem('refreshToken');
 
-    return;
+      if (!refreshToken) {
+        return Promise.reject(error);
+      }
+      try {
+        const refreshResponse = await axios.post(
+          `${baseURL}${refreshUrl}`,
+          {},
+          {
+            headers: {
+              Authorization: `Bearer ${refreshToken}`,
+            },
+          },
+        );
+
+        if (refreshResponse) {
+          const data: loginInterface = refreshResponse.data;
+          console.log(
+            'Saving tokens: ',
+            data.accessToken,
+            ' and ',
+            data.refreshToken,
+          );
+          localStorage.setItem('accessToken', data.accessToken);
+          localStorage.setItem('refreshToken', data.refreshToken);
+        }
+        const accessToken = localStorage.getItem('accessToken');
+
+        config.headers['Authorization'] = `bearer ${accessToken}`;
+        return serverClient.request(config);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    return Promise.reject(error);
   },
 );
