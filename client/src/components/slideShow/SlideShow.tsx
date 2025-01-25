@@ -9,6 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useIsShow } from '../../hooks/useIsShow';
+import { addToWatchlist } from '../../utils/addToWatchlist';
 
 interface SlideShowProps {
   content: show[] | movie[];
@@ -47,7 +48,9 @@ const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
           </h2>
         </div>
 
-        <div className={'flex space-between align-items slideshow-arrow-container'}>
+        <div
+          className={'flex space-between align-items slideshow-arrow-container'}
+        >
           <button className={'previous'} onClick={handlePrevious}>
             <FontAwesomeIcon icon={faChevronLeft} />
           </button>
@@ -57,7 +60,10 @@ const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
         </div>
 
         <div className={'slideshow-bottom flex'}>
-          <button className={'flex align-items watchlist-slideshow'}>
+          <button
+            className={'flex align-items watchlist-slideshow'}
+            onClick={() => addToWatchlist(content[currentIndex].id)}
+          >
             <FontAwesomeIcon icon={faPlus} className={'plus'} />
             <p>Watchlist</p>
           </button>
