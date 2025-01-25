@@ -11,6 +11,7 @@ const AuthPage: React.FC = () => {
     if (location.pathname === '/register') {
       setIsRegister(true);
     } else {
+      setIsRegister(false);
       return;
     }
   }, [location.pathname]);
