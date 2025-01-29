@@ -1,0 +1,32 @@
+@use '../../../styles/spacing';
+@use '../../../styles/typography';
+@use '../../../styles/colors';
+
+.auth-form {
+  position: fixed;
+  height: 50vh;
+  width: 20vw;
+  align-items: center;
+  box-shadow: 6px 6px 8px rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: spacing.$spacing-xxl 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+.form-logo-container {
+  width: 30%;
+  max-height: 20%;
+  justify-content: center;
+}
+
+input {
+  border: dimgrey solid 1px;
+  border-radius: 0.2rem;
+  color: white;
+  height: 1.3rem;
+}
+
+label {
+  font-size: typography.$font-size-lg;
+}

@@ -11,14 +11,30 @@ export const RegisterForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = await registerUser({ username, email, password });
-    console.log(result);
     if (result) {
+      alert('User registered successfully!');
       navigate('/login');
     }
   };
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <form
+      onSubmit={(e) => handleSubmit(e)}
+      className={'flex column space-between auth-form'}
+    >
+      <img
+        src={'background-comb.png'}
+        className={'form-image'}
+        alt={'form image'}
+      />
+      <img
+        src={'background-comb.png'}
+        className={'form-image'}
+        alt={'form image'}
+      />
+      <div className={'form-logo-container flex'}>
+        <img src={'honey-logo.png'} alt={'logo'} />
+      </div>
       <label htmlFor="username">Username</label>
       <input
         type={'text'}
@@ -43,7 +59,7 @@ export const RegisterForm: React.FC = () => {
         onChange={(e) => setPassword(e.target.value)}
         required={true}
       />
-      <button name={'submit'} type={'submit'} onClick={handleSubmit}>
+      <button name={'submit'} type={'submit'} className={'auth-form-button'}>
         Submit
       </button>
     </form>
