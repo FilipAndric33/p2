@@ -13,6 +13,8 @@ export const RegisterForm: React.FC = () => {
     const result = await registerUser({ username, email, password });
     if (result) {
       alert('User registered successfully!');
+    console.log(result);
+    if (result) {
       navigate('/login');
     }
   };
