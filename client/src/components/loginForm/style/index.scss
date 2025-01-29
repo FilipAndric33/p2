@@ -12,6 +12,13 @@
   padding: spacing.$spacing-xxl 0;
   background-color: rgba(0, 0, 0, 0.7);
   overflow: hidden;
+
+  input {
+    border: dimgrey solid 1px;
+    border-radius: 0.2rem;
+    color: white;
+    height: 1.3rem;
+  }
 }
 
 .form-logo-container {
@@ -20,12 +27,7 @@
   justify-content: center;
 }
 
-input {
-  border: dimgrey solid 1px;
-  border-radius: 0.2rem;
-  color: white;
-  height: 1.3rem;
-}
+
 
 label {
   font-size: typography.$font-size-lg;
