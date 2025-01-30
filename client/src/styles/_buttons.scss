@@ -116,6 +116,23 @@ button {
   }
 }
 
+.auth-form-button {
+  margin-top: 1rem;
+  background-color: colors.$primary-color;
+  color: black;
+  font-weight: typography.$font-weight-thin;
+  width: 35%;
+  text-align: center;
+  padding: 0.5rem 0;
+  border: solid transparent 1px;
+
+  &:hover {
+    background-color: transparent;
+    color: colors.$primary-color;
+    border: solid colors.$primary-color 1px;
+  }
+}
+
 @media (max-width: 770px) {
   button {
     font-size: typography.$font-size-xxs;
