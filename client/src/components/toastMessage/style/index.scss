@@ -1,0 +1,13 @@
+@use '../../../styles/spacing';
+@use '../../../styles/colors';
+@use '../../../styles/typography';
+
+.toast-message {
+  padding: spacing.$spacing-xs spacing.$spacing-xl;
+  background-color: #222121;
+  color: colors.$primary-color;
+  position: fixed;
+  bottom: 3vh;
+  left: 3vw;
+  border-radius: 0.5rem;
+}

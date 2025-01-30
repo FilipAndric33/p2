@@ -13,8 +13,8 @@ export const LoginForm: React.FC = () => {
     e.preventDefault();
     const result = await loginUser({ email, password });
     if (result) {
-      alert('User logged in successfully! ');
-      navigate('/');
+      const message = 'User logged in successfully! ';
+      navigate('/', { state: message });
     }
   };
 

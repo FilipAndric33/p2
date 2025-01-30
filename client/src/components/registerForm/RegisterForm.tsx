@@ -12,8 +12,8 @@ export const RegisterForm: React.FC = () => {
     e.preventDefault();
     const result = await registerUser({ username, email, password });
     if (result) {
-      alert('User registered successfully!');
-      navigate('/login');
+      const message = 'User Registered successfully!';
+      navigate('/login', { state: message });
     }
   };
 
