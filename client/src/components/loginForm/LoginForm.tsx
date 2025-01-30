@@ -4,7 +4,6 @@ import { loginUser } from '../../utils/loginUser';
 import { useNavigate } from 'react-router-dom';
 import './style/index.scss';
 
-
 export const LoginForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -14,8 +13,8 @@ export const LoginForm: React.FC = () => {
     e.preventDefault();
     const result = await loginUser({ email, password });
     if (result) {
-      alert('User logged in successfully! ');
-      navigate('/');
+      const message = 'User logged in successfully! ';
+      navigate('/', { state: message });
     }
   };
 
