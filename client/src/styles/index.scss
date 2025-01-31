@@ -80,6 +80,18 @@ h3 {
   width: 100%;
 }
 
+.user {
+  ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+    li{
+
+    }
+  }
+}
+
 p {
   margin: 0;
   padding: 0;
