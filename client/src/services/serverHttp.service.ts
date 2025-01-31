@@ -6,7 +6,7 @@ import axios, {
 } from 'axios';
 import { loginInterface } from '../models/loginInterface';
 
-const baseURL = 'https://fda6-109-245-175-30.ngrok-free.app';
+const baseURL = 'https://db65-87-116-166-244.ngrok-free.app';
 const refreshUrl = '/token/refresh';
 const MAX_RETRIES = 3;
 
@@ -38,9 +38,6 @@ serverClient.interceptors.response.use(
     const data: loginInterface = response.data;
 
     if (data && data.accessToken && data.refreshToken) {
-      console.log('access: ', data.accessToken);
-      console.log('refresh: ', data.refreshToken);
-
       localStorage.setItem('accessToken', data.accessToken);
       localStorage.setItem('refreshToken', data.refreshToken);
     }
@@ -78,14 +75,8 @@ serverClient.interceptors.response.use(
 
         if (refreshResponse) {
           const data: loginInterface = refreshResponse.data;
-          console.log(
-            'Saving tokens: ',
-            data.accessToken,
-            ' and ',
-            data.refreshToken,
-          );
+          console.log('Saving tokens: ', data.accessToken);
           localStorage.setItem('accessToken', data.accessToken);
-          localStorage.setItem('refreshToken', data.refreshToken);
         }
         const accessToken = localStorage.getItem('accessToken');
 

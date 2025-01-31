@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { fetchUsernameService } from '../services/fetchUsername.service';
 
-export const useFetchUsername = () => {
+export const useFindUsername = () => {
   const [username, setUsername] = useState('');
   useEffect(() => {
     const fetchUsername = async () => {

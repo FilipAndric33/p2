@@ -1,7 +1,4 @@
 import React from 'react';
-import { faBell, faUser } from '@fortawesome/free-regular-svg-icons';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ContinueCard from './continueCard/ContinueCard';
 import './style/index.scss';
 import Showcase from './showcase/Showcase';
@@ -11,6 +8,7 @@ import TopRatedCard from './topRatedCard/TopRatedCard';
 import ShowcaseScroll from './showcase/showcaseScroll/ShowcaseScroll';
 import { sharedGenres } from '../../models/sharedGenres';
 import GenreCard from './genreCard/GenreCard';
+import DropdownMenu from '../dropdownMenu/DropdownMenu';
 
 const RightSideBar = () => {
   const shows = useGetShows();
@@ -19,20 +17,7 @@ const RightSideBar = () => {
 
   return (
     <>
-      <div className={'user flex'} style={{ position: 'relative' }}>
-        <FontAwesomeIcon icon={faBell} />
-        <div
-          className={'flex username'}
-          style={{ position: 'absolute', right: '15%' }}
-        >
-          Filip
-          <FontAwesomeIcon icon={faChevronDown} />
-        </div>
-        <FontAwesomeIcon
-          icon={faUser}
-          style={{ position: 'absolute', right: 0 }}
-        />
-      </div>
+      <DropdownMenu />
       <div className={'showcase'}>
         {continueCardContent && (
           <Showcase propName={'Continue'}>
