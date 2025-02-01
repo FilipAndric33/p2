@@ -6,7 +6,7 @@ import axios, {
 } from 'axios';
 import { loginInterface } from '../models/loginInterface';
 
-const baseURL = 'https://db65-87-116-166-244.ngrok-free.app';
+const baseURL = 'https://a5e8-87-116-167-120.ngrok-free.app';
 const refreshUrl = '/token/refresh';
 const MAX_RETRIES = 3;
 
