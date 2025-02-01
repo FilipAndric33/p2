@@ -8,7 +8,7 @@ import TopRatedCard from './topRatedCard/TopRatedCard';
 import ShowcaseScroll from './showcase/showcaseScroll/ShowcaseScroll';
 import { sharedGenres } from '../../models/sharedGenres';
 import GenreCard from './genreCard/GenreCard';
-import DropdownMenu from '../dropdownMenu/DropdownMenu';
+import DropdownMenu from './dropdownMenu/DropdownMenu';
 
 const RightSideBar = () => {
   const shows = useGetShows();

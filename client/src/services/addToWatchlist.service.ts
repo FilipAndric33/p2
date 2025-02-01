@@ -1,6 +1,6 @@
-import { serverClient } from '../services/serverHttp.service';
+import { serverClient } from './serverHttp.service';
 
-export const addToWatchlist = async (id: number) => {
+export const addToWatchlistService = async (id: number) => {
   try {
     const response = await serverClient.post(`content/watchlist/${id}`);
     if (!response) {

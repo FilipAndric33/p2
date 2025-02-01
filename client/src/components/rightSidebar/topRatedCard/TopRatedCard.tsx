@@ -4,7 +4,7 @@ import { movie } from '../../../models/movies';
 import { useIsShow } from '../../../hooks/useIsShow';
 import { useMatchGenreId } from '../../../hooks/useMatchGenreId';
 import './style/index.scss';
-import { addToWatchlist } from '../../../utils/addToWatchlist';
+import { addToWatchlistService } from '../../../services/addToWatchlist.service';
 
 interface CardProps {
   content: show | movie;
@@ -34,7 +34,10 @@ const TopRatedCard: React.FC<CardProps> = ({ content }) => {
           <div>{isShow ? showGenreNames[0] : movieGenreNames[0]}</div>
         </div>
         <div className={'flex space-between bottom'}>
-          <button className={'plus'} onClick={() => addToWatchlist(content.id)}>
+          <button
+            className={'plus'}
+            onClick={() => addToWatchlistService(content.id)}
+          >
             +
           </button>
           <button className={'watch-now'}>Watch</button>

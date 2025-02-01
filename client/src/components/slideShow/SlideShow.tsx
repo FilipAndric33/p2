@@ -9,7 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useIsShow } from '../../hooks/useIsShow';
-import { addToWatchlist } from '../../utils/addToWatchlist';
+import { addToWatchlistService } from '../../services/addToWatchlist.service';
 
 interface SlideShowProps {
   content: show[] | movie[];
@@ -62,7 +62,7 @@ const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
         <div className={'slideshow-bottom flex'}>
           <button
             className={'flex align-items watchlist-slideshow'}
-            onClick={() => addToWatchlist(content[currentIndex].id)}
+            onClick={() => addToWatchlistService(content[currentIndex].id)}
           >
             <FontAwesomeIcon icon={faPlus} className={'plus'} />
             <p>Watchlist</p>
