@@ -1,4 +1,5 @@
 import { serverClient } from './serverHttp.service';
+import { loginInterface } from '../models/loginInterface';
 
 interface props {
   email: string;
@@ -7,15 +8,19 @@ interface props {
 
 export const loginUserService = async ({ email, password }: props) => {
   try {
-    const response = await serverClient.post('login', {
+    const response = await serverClient.post<loginInterface>('/login', {
       email,
       password,
     });
-    console.log(response.data);
     if (!response) {
       return;
     }
-    return response.data;
+    const loginRes = response.data;
+    return {
+      id: loginRes.id,
+      username: loginRes.username,
+      email: loginRes.email,
+    };
   } catch (err) {
     console.log(err);
     return;
