@@ -4,7 +4,7 @@ import { loginUserService } from '../../services/loginUser.service';
 import { useNavigate } from 'react-router-dom';
 import './style/index.scss';
 
-export const LoginForm: React.FC = () => {
+const LoginForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -58,3 +58,5 @@ export const LoginForm: React.FC = () => {
     </form>
   );
 };
+
+export default LoginForm;

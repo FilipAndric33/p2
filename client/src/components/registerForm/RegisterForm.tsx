@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { registerUserService } from '../../services/registerUser.service';
 import { useNavigate } from 'react-router-dom';
 
-export const RegisterForm: React.FC = () => {
+const RegisterForm: React.FC = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -65,3 +65,5 @@ export const RegisterForm: React.FC = () => {
     </form>
   );
 };
+
+export default RegisterForm;
