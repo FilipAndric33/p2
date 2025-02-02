@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { loginUser } from '../../utils/loginUser';
+import { loginUserService } from '../../services/loginUser.service';
 import { useNavigate } from 'react-router-dom';
 import './style/index.scss';
 
@@ -11,7 +11,7 @@ export const LoginForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const result = await loginUser({ email, password });
+    const result = await loginUserService({ email, password });
     if (result) {
       const message = 'User logged in successfully! ';
       navigate('/', { state: message });

@@ -76,6 +76,48 @@ h3 {
   border-radius: 10px;
 }
 
+.dropdown-list li {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dropdown-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  list-style: none;
+}
+
+.dropdown-menu {
+  text-decoration: none;
+  position: relative;
+
+  li {
+    list-style: none;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+  }
+  &:hover {
+    .dropdown-list {
+      display: block;
+    }
+    color: colors.$primary-color;
+  }
+}
+
+.dropdown-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.user-box {
+  max-height: 2.5rem;
+  padding: spacing.$spacing-xs 1.75em;
+  align-items: center;
+}
+
 .popular-cards-content {
   width: 100%;
 }

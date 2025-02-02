@@ -1,11 +1,11 @@
-import { serverClient } from '../services/serverHttp.service';
+import { serverClient } from './serverHttp.service';
 
 interface props {
   email: string;
   password: string;
 }
 
-export const loginUser = async ({ email, password }: props) => {
+export const loginUserService = async ({ email, password }: props) => {
   try {
     const response = await serverClient.post('login', {
       email,

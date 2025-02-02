@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { registerUser } from '../../utils/registerUser';
+import { registerUserService } from '../../services/registerUser.service';
 import { useNavigate } from 'react-router-dom';
 
 export const RegisterForm: React.FC = () => {
@@ -10,7 +10,7 @@ export const RegisterForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const result = await registerUser({ username, email, password });
+    const result = await registerUserService({ username, email, password });
     if (result) {
       const message = 'User Registered successfully!';
       navigate('/login', { state: message });
