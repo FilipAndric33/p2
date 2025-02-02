@@ -2,11 +2,12 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faUser } from '@fortawesome/free-regular-svg-icons';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import { useFindUsername } from '../../../hooks/useFindUsername';
 import { useNavigate } from 'react-router-dom';
+import { userStore } from '../../../stores/userStore';
 
-const DropdownMenu = () => {
-  const username = useFindUsername();
+const DropdownMenu: React.FC = () => {
+  const username = userStore((state) => state.username);
+  const { toggleLoggedIn } = userStore();
   const navigate = useNavigate();
 
   return (
@@ -21,7 +22,7 @@ const DropdownMenu = () => {
                 <FontAwesomeIcon icon={faChevronDown} />
               </li>
               <ul className={'dropdown-list'}>
-                <li>Log out</li>
+                <li onClick={() => toggleLoggedIn()}>Log out</li>
               </ul>
             </>
           ) : (

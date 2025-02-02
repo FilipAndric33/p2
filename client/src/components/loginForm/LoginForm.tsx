@@ -1,22 +1,9 @@
 import React from 'react';
-import { useState } from 'react';
-import { loginUserService } from '../../services/loginUser.service';
-import { useNavigate } from 'react-router-dom';
+import { useLoginForm } from '../../hooks/useLoginForm';
 import './style/index.scss';
 
 const LoginForm: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const result = await loginUserService({ email, password });
-    if (result) {
-      const message = 'User logged in successfully! ';
-      navigate('/', { state: message });
-    }
-  };
+  const { formValues, handleChange, handleSubmit } = useLoginForm();
 
   return (
     <form
@@ -40,16 +27,16 @@ const LoginForm: React.FC = () => {
       <input
         type={'email'}
         name={'email'}
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        value={formValues.email}
+        onChange={(e) => handleChange(e)}
         required={true}
       />
       <label htmlFor="password">Password:</label>
       <input
         type={'password'}
         name={'password'}
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        value={formValues.password}
+        onChange={(e) => handleChange(e)}
         required={true}
       />
       <button name={'submit'} type={'submit'} className={'auth-form-button'}>

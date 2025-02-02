@@ -1,21 +1,8 @@
-import React, { useState } from 'react';
-import { registerUserService } from '../../services/registerUser.service';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { useRegisterForm } from '../../hooks/useRegisterForm';
 
 const RegisterForm: React.FC = () => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const result = await registerUserService({ username, email, password });
-    if (result) {
-      const message = 'User Registered successfully!';
-      navigate('/login', { state: message });
-    }
-  };
+  const { formValues, handleChange, handleSubmit } = useRegisterForm();
 
   return (
     <form
@@ -39,24 +26,24 @@ const RegisterForm: React.FC = () => {
       <input
         type={'text'}
         name={'username'}
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        value={formValues.username}
+        onChange={(e) => handleChange(e)}
         required={true}
       />
       <label htmlFor="email">Email</label>
       <input
         type={'email'}
         name={'email'}
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        value={formValues.email}
+        onChange={(e) => handleChange(e)}
         required={true}
       />
       <label htmlFor="password">Password</label>
       <input
         type={'password'}
         name={'password'}
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        value={formValues.password}
+        onChange={(e) => handleChange(e)}
         required={true}
       />
       <button name={'submit'} type={'submit'} className={'auth-form-button'}>

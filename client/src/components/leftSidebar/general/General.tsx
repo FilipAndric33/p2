@@ -1,26 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGear, faDoorOpen } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { userStore } from '../../../stores/userStore';
 
 const General = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const token = localStorage.getItem('accessToken');
-  const [isLoggedIn, setIsLoggedIn] = useState(!!token);
-
-  const handleLogout = () => {
-    if (!isLoggedIn) {
-      return;
-    }
-    localStorage.clear();
-    setIsLoggedIn(false);
-    const message = 'User logged out successfully';
-    navigate('/', { state: message });
-    if (location.pathname == '/') {
-      window.location.reload();
-    }
-  };
+  const isLoggedIn = userStore((state) => state.isLoggedIn);
+  const { toggleLoggedIn } = userStore();
 
   return (
     <div className={'general flex column'}>
@@ -29,8 +14,11 @@ const General = () => {
         <FontAwesomeIcon icon={faGear} />
         <p>Settings</p>
       </button>
-      {token ? (
-        <button className={'flex sidebar-button'} onClick={handleLogout}>
+      {isLoggedIn ? (
+        <button
+          className={'flex sidebar-button'}
+          onClick={() => toggleLoggedIn()}
+        >
           <FontAwesomeIcon icon={faDoorOpen} />
           <p>Log out</p>
         </button>
