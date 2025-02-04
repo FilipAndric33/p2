@@ -1,0 +1,140 @@
+@use 'colors';
+@use 'typography';
+@use 'spacing';
+
+button {
+  font-size: typography.$font-size-lg;
+  border-radius: 8px;
+  color: colors.$text-color;
+  border: none;
+  padding: spacing.$spacing-xs;
+  background-color: colors.$secondary-color;
+  transition: 0.3s ease;
+  font-weight: typography.$font-weight-bold;
+  cursor: pointer;
+
+  &:hover {
+    background-color: colors.$secondary-color-strong;
+  }
+
+}
+
+.watch-now, .more-info {
+  background-color: colors.$primary-color;
+  color: black;
+  padding: spacing.$spacing-xs spacing.$spacing-md;
+
+  &:hover {
+    background-color: colors.$primary-color;
+    color: colors.$text-color;
+  }
+}
+
+.more-info {
+  min-height: 15px;
+}
+
+.dot {
+  padding: 0.2rem;
+  background-color: colors.$text-color;
+  border-radius: 50%;
+
+  &.active {
+    background-color: colors.$primary-color;
+  }
+}
+
+.previous, .next {
+  display: flex;
+  padding: spacing.$spacing-sm spacing.$spacing-md;
+  max-width: 40px;
+  max-height: 40px;
+  font-weight: typography.$font-weight-light;
+  font-size: typography.$font-size-md;
+  align-items: center;
+  justify-content: center;
+
+  &.showcase {
+    background-color: transparent;
+    padding: 0;
+    margin: 10px;
+    font-size: typography.$font-size-xs;
+
+    &:hover {
+      color: colors.$primary-color;
+    }
+  }
+}
+
+.plus {
+  margin-right: spacing.$spacing-sm;
+}
+
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: typography.$font-weight-light;
+  background-color: transparent;
+  border-radius: 0;
+  border-bottom: solid 2px transparent;
+
+  &:hover {
+    border-bottom: solid 2px colors.$primary-color;
+    border-radius: 0;
+    color: colors.$primary-color;
+    background-color: transparent;
+  }
+}
+
+.sidebar-button {
+  background-color: transparent;
+  font-weight: typography.$font-weight-thin;
+  max-height: 3rem;
+  border-radius: 0;
+  border-right: solid 2px transparent;
+  gap: 1rem;
+  align-items: center;
+
+  &:hover {
+    border-right: solid 2px colors.$primary-color;
+    color: colors.$primary-color;
+    border-radius: 0;
+    background-color: transparent;
+  }
+}
+
+.see-more{
+  background-color: transparent;
+  font-size: typography.$font-size-xxs;
+  font-weight: typography.$font-weight-thin;
+
+  &:hover {
+    background-color: transparent;
+    color: colors.$primary-color;
+  }
+}
+
+.auth-form-button {
+  margin-top: 1rem;
+  background-color: colors.$primary-color;
+  color: black;
+  font-weight: typography.$font-weight-thin;
+  width: 35%;
+  text-align: center;
+  padding: 0.5rem 0;
+  border: solid transparent 1px;
+
+  &:hover {
+    background-color: transparent;
+    color: colors.$primary-color;
+    border: solid colors.$primary-color 1px;
+  }
+}
+
+@media (max-width: 770px) {
+  button {
+    font-size: typography.$font-size-xxs;
+  }
+}
