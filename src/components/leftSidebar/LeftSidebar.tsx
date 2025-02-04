@@ -1,7 +1,6 @@
 import Menu from './menu/Menu';
 import Library from './library/Library';
 import General from './general/General';
-import './style/index.scss';
 
 const LeftSidebar = () => {
   return (

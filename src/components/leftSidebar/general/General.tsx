@@ -7,7 +7,7 @@ const General = () => {
   const { toggleLoggedIn } = userStore();
 
   return (
-    <div className={'general flex column'}>
+    <div className={'flex column'}>
       <p className={'sidebar-title'}>General</p>
       <button className={'flex sidebar-button'}>
         <FontAwesomeIcon icon={faGear} />

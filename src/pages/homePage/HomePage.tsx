@@ -22,7 +22,7 @@ const HomePage: React.FC = () => {
       <div className={'flex home-page'}>
         {toastMessage ? <ToastMessage message={toastMessage} /> : ''}
         <div
-          className={`left-sidebar${openMenu ? '-visible' : ' '}`}
+          className={`h-full gap-spacing-xl px-spacing-xl font-light mr-spacing-xxl ${openMenu ? '-visible' : ' '}`}
           ref={sidebarRef}
         >
           <LeftSidebar />
