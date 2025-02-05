@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import LoginForm from '../../components/loginForm/LoginForm';
-import './style/index.scss';
 
 const LoginPage = () => {
   useEffect(() => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { show } from '../../../models/shows';
 import { movie } from '../../../models/movies';
-import './style/index.scss';
 import { useIsShow } from '../../../hooks/useIsShow';
 
 interface ContinueCardProps {

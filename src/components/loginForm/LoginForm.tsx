@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLoginForm } from '../../hooks/useLoginForm';
-import './style/index.scss';
 
 const LoginForm: React.FC = () => {
   const { formValues, handleChange, handleSubmit } = useLoginForm();

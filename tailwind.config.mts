@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   mode: 'jit',
   content: ['index.html', './src/**/*.{js, jsx, ts, tsx}'],
   theme: {
@@ -6,22 +6,14 @@ module.exports = {
       colors: {
         'primary-color': '#ffb700',
         'background-color': 'black',
-        'secondary-color': 'rgba(124, 123, 123, 0.26)',
+        'text-color': 'rgba(249, 249, 249, 067)',
+        'secondary-color-light': 'rgba(124, 123, 123, 0.26)',
+        'secondary-color-normal': 'rgba(124, 123, 123, 0.4)',
         'secondary-color-strong': 'rgba(124, 123, 123, 0.8)',
-        'text-color': 'rgb(248, 244, 232)',
-      },
-      spacing: {
-        'spacing-xxs': '0.25em',
-        'spacing-xs': '0.5em',
-        'spacing-sm': '0.75em',
-        'spacing-md': '1em',
-        'spacing-lg': '1.25em',
-        'spacing-xl': '1.75em',
-        'spacing-xxl': '2.5em',
       },
       fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif'],
-        merriweather: ['Merriweather', 'serif'],
+        luckiest: ['Luckiest guy', 'sans-serif'],
+        lato: ['Lato', 'sans-serif'],
       },
       typography: {
         'font-size-xxs': '0.6em',

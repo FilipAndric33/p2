@@ -1,6 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Merriweather:wght@400;700&display=swap');
 @import 'tailwindcss';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@config '../tailwind.config.mts';
 
+.btn {
+    @apply ease-in-out duration-300 hover:cursor-pointer;
+}
+
+.left-sidebar-btn {
+    @apply hover:text-primary-color hover:border-r-2 hover:border-r-primary-color border-r-2 border-solid border-transparent my-2
+}
+
+.background-image {
+     @apply absolute top-0 left-0 bottom-0 right-0 bg-cover bg-center rounded-md -z-1
+}

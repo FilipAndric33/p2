@@ -2,7 +2,6 @@ import React from 'react';
 import { useGetShows } from '../../../hooks/useGetShows';
 import { useGetMovies } from '../../../hooks/useGetMovies';
 import { sharedGenreNames } from '../../../models/sharedGenres';
-import './style/index.scss';
 
 interface Props {
   genreName: sharedGenreNames;

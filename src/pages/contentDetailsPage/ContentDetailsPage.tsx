@@ -8,7 +8,6 @@ import { faChevronLeft, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Rating } from '../../components/rating/Rating';
 import { faImdb } from '@fortawesome/free-brands-svg-icons';
-import './style/index.scss';
 
 const ContentDetailsPage: React.FC = () => {
   const navigate = useNavigate();

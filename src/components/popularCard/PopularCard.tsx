@@ -1,7 +1,6 @@
 import { show } from '../../models/shows';
 import React from 'react';
 import { Rating } from '../rating/Rating';
-import './style/index.scss';
 import { movie } from '../../models/movies';
 import { useIsShow } from '../../hooks/useIsShow';
 import { useMatchGenreId } from '../../hooks/useMatchGenreId';
@@ -18,7 +17,9 @@ const PopularCard: React.FC<PopularCardProps> = ({ content }) => {
   const type = isShow ? 'show' : 'movie';
 
   return (
-    <div className={'flex card-container column space-between'}>
+    <div
+      className={'flex flex-column justify-between relative max-w-40 min-h-64'}
+    >
       <div
         className={'background-image'}
         style={{

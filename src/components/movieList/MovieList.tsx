@@ -8,10 +8,14 @@ const MovieList = () => {
   const slideShowContent = useSetSlideShowContent({ content: movies });
 
   return (
-    <div className={'flex column'}>
+    <div className={'flex flex-col flex-1'}>
       {slideShowContent && <SlideShow content={slideShowContent} />}
-      <h2>Popular on Honey Movies</h2>
-      <div className={'popular-cards-content flex space-between'}>
+      <div>
+        <h2 className={'text-2xl font-bold mt-8 mb-4'}>
+          Popular on Honey Movies
+        </h2>
+      </div>
+      <div className={'flex justify-between gap-12'}>
         {movies &&
           movies.length > 0 &&
           movies

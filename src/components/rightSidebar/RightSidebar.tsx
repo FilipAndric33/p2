@@ -1,5 +1,4 @@
 import ContinueCard from './continueCard/ContinueCard';
-import './style/index.scss';
 import Showcase from './showcase/Showcase';
 import { useSetCardContent } from '../../hooks/useSetCardContent';
 import { useGetShows } from '../../hooks/useGetShows';
@@ -17,7 +16,7 @@ const RightSideBar = () => {
   return (
     <>
       <DropdownMenu />
-      <div className={'showcase'}>
+      <div className={'max-w-[20vw] overflow-x-hidden'}>
         {continueCardContent && (
           <Showcase propName={'Continue'}>
             <ShowcaseScroll>
@@ -28,7 +27,7 @@ const RightSideBar = () => {
           </Showcase>
         )}
       </div>
-      <div className={'showcase'}>
+      <div className={'showcase overflow-x-hidden'}>
         <Showcase propName={'Top Rated'}>
           <ShowcaseScroll>
             {topRatedContent.map((content, index) => (
@@ -37,7 +36,7 @@ const RightSideBar = () => {
           </ShowcaseScroll>
         </Showcase>
       </div>
-      <div className={'showcase'}>
+      <div className={'showcase overflow-x-hidden'}>
         <Showcase propName={'Genres'}>
           {sharedGenres &&
             sharedGenres.map((row, rowIndex) => (

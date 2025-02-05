@@ -1,5 +1,4 @@
 import React, { cloneElement, ReactElement, useRef } from 'react';
-import './style/index.scss';
 import {
   faChevronLeft,
   faChevronRight,

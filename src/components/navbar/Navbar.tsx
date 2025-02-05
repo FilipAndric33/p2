@@ -1,5 +1,4 @@
 import React from 'react';
-import './style/index.scss';
 import {
   faMagnifyingGlass,
   faFilter,
@@ -18,10 +17,12 @@ const Navbar: React.FC<NavbarProps> = ({ setOpenMenu }) => {
   };
 
   return (
-    <div className={'navbar flex space-between'}>
+    <div
+      className={'flex justify-between max-h-8 items-center w-full mt-12 mb-4'}
+    >
       <FontAwesomeIcon
         icon={faBars}
-        className={'hamburger-menu'}
+        className={'!hidden'}
         onClick={handleHamburgerClick}
       />
       <Link to={'/'} className={'nav-button'}>
@@ -33,7 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({ setOpenMenu }) => {
       <Link to={'/Anime'} className={'nav-button'}>
         Anime
       </Link>
-      <div className={'search-box flex'}>
+      <div className={'flex items-center'}>
         <FontAwesomeIcon icon={faMagnifyingGlass} className={'nav-icon'} />
         <input placeholder={'search'} />
         <FontAwesomeIcon icon={faFilter} className={'nav-icon'} />

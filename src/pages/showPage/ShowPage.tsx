@@ -13,18 +13,18 @@ const ShowPage: React.FC = () => {
 
   return (
     <>
-      <div className={'flex home-page'}>
+      <div className={'h-full w-full flex flex-1 flex-row'}>
         <div
-          className={`left-sidebar${openMenu ? '-visible' : ' '}`}
+          className={`h-full gap-4 px-2 font-light mr-6 ${openMenu ? '-visible' : ' '}`}
           ref={sidebarRef}
         >
           <LeftSidebar />
         </div>
-        <div className="flex column center-container space-between">
+        <div className="flex flex-col justify-between">
           <Navbar setOpenMenu={setOpenMenu} />
           <TVShowList />
         </div>
-        <div className={'right-sidebar flex column space-between'}>
+        <div className={'max-w-[20vw]'}>
           <RightSidebar />
         </div>
       </div>

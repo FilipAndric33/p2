@@ -3,7 +3,6 @@ import { show } from '../../../models/shows';
 import { movie } from '../../../models/movies';
 import { useIsShow } from '../../../hooks/useIsShow';
 import { useMatchGenreId } from '../../../hooks/useMatchGenreId';
-import './style/index.scss';
 import { addToWatchlistService } from '../../../services/addToWatchlist.service';
 
 interface CardProps {
