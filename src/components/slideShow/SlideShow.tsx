@@ -34,13 +34,13 @@ const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
     content && (
       <div
         className={
-          'flex flex-col justify-between relative min-h-[40vh] mx-4 my-8 p-6'
+          'flex flex-col justify-between relative min-h-[40vh] my-8 p-6'
         }
       >
         <div
-          className={'background-image w-full h-full'}
+          className={'background-image w-full h-full gradient-normal'}
           style={{
-            backgroundImage: `url(https://image.tmdb.org/t/p/w780${content[currentIndex].backdrop_path})`,
+            backgroundImage: `url(https://image.tmdb.org/t/p/w1280${content[currentIndex].backdrop_path})`,
           }}
         />
         <div className={'font-normal font-lato text-4xl'}>
@@ -58,7 +58,7 @@ const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
         >
           <button
             className={
-              'btn bg-secondary-color-normal py-1 px-3 text-sm font-bold rounded-lg hover:bg-secondary-color-strong hover:text-primary-color'
+              'btn flex items-center bg-secondary-color-normal p-3 text-sm font-bold rounded-xl hover:bg-secondary-color-strong hover:text-primary-color'
             }
             onClick={handlePrevious}
           >
@@ -66,7 +66,7 @@ const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
           </button>
           <button
             className={
-              'btn bg-secondary-color-normal py-1 px-3 text-sm font-bold rounded-lg hover:bg-secondary-color-strong hover:text-primary-color'
+              'btn flex items-center bg-secondary-color-normal p-3 text-sm font-bold rounded-xl hover:bg-secondary-color-strong hover:text-primary-color'
             }
             onClick={handleNext}
           >
@@ -81,7 +81,7 @@ const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
         >
           <button
             className={
-              'btn flex items-center font-bold bg-secondary-color-normal px-3 py-2 rounded-md hover:bg-secondary-color-strong'
+              'btn watchlist-btn flex items-center px-3 py-2 rounded-md'
             }
             onClick={() => addToWatchlistService(content[currentIndex].id)}
           >
@@ -106,11 +106,7 @@ const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
               onClick={() => setCurrentIndex(2)}
             ></button>
           </div>
-          <button
-            className={
-              'btn bg-primary-color text-black border-transparent border-solid border-2 rounded-lg font-bold px-6 py-2 hover:bg-transparent hover:text-primary-color hover:border-primary-color'
-            }
-          >
+          <button className={'btn primary-btn rounded-lg font-bold px-6 py-2'}>
             Watch now
           </button>
         </div>

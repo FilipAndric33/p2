@@ -13,7 +13,7 @@ const TVShowList = () => {
       <h2 className={'text-2xl font-bold mt-8 mb-4'}>
         Popular on Honey Movies
       </h2>
-      <div className={'flex justify-between gap-12'}>
+      <div className={'flex flex-1 justify-between'}>
         {shows &&
           shows.length > 0 &&
           shows

@@ -10,6 +10,9 @@ export default {
         'secondary-color-light': 'rgba(124, 123, 123, 0.26)',
         'secondary-color-normal': 'rgba(124, 123, 123, 0.4)',
         'secondary-color-strong': 'rgba(124, 123, 123, 0.8)',
+        'gradient-light': 'rgba(194, 194, 163, 0.3)',
+        'gradient-normal': 'rgba(0, 5, 10, 0.5)',
+        'gradient-dark': 'rgba(0, 5, 10, 0.65)',
       },
       fontFamily: {
         luckiest: ['Luckiest guy', 'sans-serif'],

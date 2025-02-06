@@ -27,7 +27,7 @@ const HomePage: React.FC = () => {
         >
           <LeftSidebar />
         </div>
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col justify-between w-full px-8">
           <Navbar setOpenMenu={setOpenMenu} />
           <MovieList />
         </div>
