@@ -7,7 +7,10 @@ interface ShowcaseScrollProps {
 const ShowcaseScroll = forwardRef<HTMLDivElement, ShowcaseScrollProps>(
   ({ children }, ref) => {
     return (
-      <div className="showcase-scroll flex" ref={ref}>
+      <div
+        className="overflow-x-auto scroll-smooth whitespace-nowrap snap-x snap-mandatory scroll-n scrollbar-hide flex"
+        ref={ref}
+      >
         {children}
       </div>
     );

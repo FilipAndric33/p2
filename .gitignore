@@ -28,6 +28,6 @@ yarn-error.log*
 
 node_modules
 client/package-lock.json
-eslint.config.mjs
+eslint.config.js
 package-lock.json
 package.json
