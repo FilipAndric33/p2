@@ -81,7 +81,7 @@ const SlideShow: React.FC<SlideShowProps> = ({ content }) => {
         >
           <button
             className={
-              'btn watchlist-btn flex items-center px-3 py-2 rounded-md'
+              'btn secondary-btn flex items-center px-3 py-2 rounded-md'
             }
             onClick={() => addToWatchlistService(content[currentIndex].id)}
           >

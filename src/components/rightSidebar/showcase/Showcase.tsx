@@ -52,24 +52,30 @@ const Showcase: React.FC<ShowcaseProps> = ({ children, propName }) => {
     });
 
   return (
-    <div className={'flex column'}>
-      <div className={'flex align-items space-between'}>
-        <div className={'flex align-items'}>
-          <h5>{propName}</h5>
-          <button className={'previous showcase'}>
+    <div className={'flex text-xs flex-col'}>
+      <div className={'flex items-center justify-between'}>
+        <div className={'flex items-center'}>
+          <h5 className={'text-lg font-bold mr-2'}>{propName}</h5>
+          <button className={'btn mr-4 hover:text-primary-color'}>
             <FontAwesomeIcon icon={faChevronLeft} onClick={scrollPrevious} />
           </button>
-          <button className={'next showcase'} onClick={scrollNext}>
+          <button
+            className={'btn hover:text-primary-color'}
+            onClick={scrollNext}
+          >
             <FontAwesomeIcon icon={faChevronRight} />
           </button>
         </div>
-        <button className={'see-more'}>
-          Show more <FontAwesomeIcon icon={faChevronRight} />
+        <button
+          className={
+            'btn flex items-center font-light mr-4 hover:text-primary-color'
+          }
+        >
+          <p className={'mr-2'}>See more</p>{' '}
+          <FontAwesomeIcon icon={faChevronRight} className={'!text-xxs'} />
         </button>
       </div>
-      <div className={'flex showcase-content column'}>
-        {attachRefs(children)}
-      </div>
+      <div className={'flex flex-col'}>{attachRefs(children)}</div>
     </div>
   );
 };

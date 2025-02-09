@@ -29,7 +29,9 @@ const PopularCard: React.FC<PopularCardProps> = ({ content }) => {
         }}
       ></div>
       <div className={'text-xl font-bold p-4'}>
-        <h4>{isShow ? (content as show).name : (content as movie).title}</h4>
+        <h4 className={'truncate'}>
+          {isShow ? (content as show).name : (content as movie).title}
+        </h4>
         <Rating />
       </div>
 
@@ -41,7 +43,7 @@ const PopularCard: React.FC<PopularCardProps> = ({ content }) => {
         <div className={'flex justify-between items-center h-7/10 w-full'}>
           <button
             className={
-              'btn watchlist-btn flex items-center h-full px-4 text-4xl font-bold bg-secondary-color-normal rounded-xl'
+              'btn secondary-btn flex items-center h-full px-4 text-4xl font-bold bg-secondary-color-normal rounded-xl'
             }
             onClick={() => addToWatchlistService(content.id)}
           >
@@ -50,10 +52,10 @@ const PopularCard: React.FC<PopularCardProps> = ({ content }) => {
           <Link
             to={`details/${type}/${content.id}`}
             className={
-              'btn primary-btn w-8/11 flex justify-center text-xl h-full bg-primary-color text-black rounded-xl font-bold'
+              'btn primary-btn items-center w-8/11 flex justify-center text-xl h-full bg-primary-color text-black rounded-xl font-bold'
             }
           >
-            <button>More info</button>
+            More info
           </Link>
         </div>
       </div>

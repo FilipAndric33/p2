@@ -31,9 +31,7 @@ const HomePage: React.FC = () => {
           <Navbar setOpenMenu={setOpenMenu} />
           <MovieList />
         </div>
-        <div className={'max-w-[20vw]'}>
-          <RightSidebar />
-        </div>
+        <RightSidebar />
       </div>
     </>
   );

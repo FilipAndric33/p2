@@ -24,9 +24,7 @@ const ShowPage: React.FC = () => {
           <Navbar setOpenMenu={setOpenMenu} />
           <TVShowList />
         </div>
-        <div className={'max-w-[20vw]'}>
-          <RightSidebar />
-        </div>
+        <RightSidebar />
       </div>
     </>
   );

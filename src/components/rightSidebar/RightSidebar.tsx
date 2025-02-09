@@ -14,9 +14,13 @@ const RightSideBar = () => {
   const topRatedContent = useSetCardContent({ content: shows });
 
   return (
-    <>
+    <div
+      className={
+        'max-w-[20vw] mt-12 pl-2 justify-between overflow-x-hidden flex flex-col flex-auto'
+      }
+    >
       <DropdownMenu />
-      <div className={'max-w-[20vw] overflow-x-hidden'}>
+      <div>
         {continueCardContent && (
           <Showcase propName={'Continue'}>
             <ShowcaseScroll>
@@ -48,7 +52,7 @@ const RightSideBar = () => {
             ))}
         </Showcase>
       </div>
-    </>
+    </div>
   );
 };
 

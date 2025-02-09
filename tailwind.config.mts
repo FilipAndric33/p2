@@ -27,6 +27,9 @@ export default {
         'font-size-xl': '1.5em',
         'font-size-xxl': '2em',
       },
+      boxShadow: {
+        'form-white': '6px 6px 8px rgba(255, 255, 255, 0.1)',
+      },
     },
   },
   plugins: [],
