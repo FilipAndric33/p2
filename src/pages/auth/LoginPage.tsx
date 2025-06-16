@@ -1,15 +1,12 @@
-import { useEffect } from 'react';
 import LoginForm from '../../components/loginForm/LoginForm';
-import './style/index.scss';
 
 const LoginPage = () => {
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <div className={'flex auth-page'}>
+    <div
+      className={
+        'flex bg-black w-full h-[150vh] justify-center items-center relative'
+      }
+    >
       <LoginForm />
     </div>
   );

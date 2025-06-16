@@ -8,7 +8,6 @@ import { faChevronLeft, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Rating } from '../../components/rating/Rating';
 import { faImdb } from '@fortawesome/free-brands-svg-icons';
-import './style/index.scss';
 
 const ContentDetailsPage: React.FC = () => {
   const navigate = useNavigate();
@@ -47,55 +46,81 @@ const ContentDetailsPage: React.FC = () => {
 
   return content ? (
     <div
-      className={'content-details flex column'}
+      className={'w-[100vw] h-[100vh] flex flex-col flex-1'}
       style={{ position: 'relative' }}
     >
       <div
-        className={'background-image'}
+        className={'background-image !rounded-none'}
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/original${content.backdrop_path})`,
         }}
       />
 
       <button
-        className={'flex align-items back-home space-between'}
+        className={
+          'btn flex items-center text-lg font-bold bg-transparent max-w-[11vw] max-h-[8vh] back-home mb-[8vh] mt-[8vh] mx-[2vw] hover:text-primary-color'
+        }
         onClick={handleBackClick}
       >
-        <FontAwesomeIcon icon={faChevronLeft} className={'icon'} />
+        <FontAwesomeIcon
+          icon={faChevronLeft}
+          className={'bg-secondary-color-normal p-3 mr-2 rounded-lg'}
+        />
         Back Home
       </button>
       <div
-        className={'flex align-items content-details-content'}
-        style={{ justifyContent: 'center', maxHeight: '50vh' }}
+        className={
+          'flex items-center content-details-content justify-center h-full'
+        }
       >
-        <div className={'flex column left-side'}>
+        <div
+          className={
+            'flex flex-col left-side max-w-4/10 gap-1.5 mr-[15vw] max-h-[70vh]'
+          }
+        >
           <h1>{isShow ? (content as show).name : (content as movie).title}</h1>
           <Rating />
           <p>10M+ views</p>
           <div>
-            <FontAwesomeIcon icon={faImdb} className={'imdb'} />
+            <FontAwesomeIcon
+              icon={faImdb}
+              className={'text-3xl text-primary-color'}
+            />
           </div>
           <p>{content.overview}</p>
-          <div className={'flex'} style={{ maxHeight: '8vh' }}>
-            <button className={'watchlist'}>
-              <FontAwesomeIcon icon={faPlus} className={'plus'} />
+          <div className={'flex max-h-[10vh] w-6/10'}>
+            <button
+              className={
+                'btn bg-secondary-color-normal border-solid border-2 border-transparent font-bold w-full py-2 rounded-lg hover:bg-black hover:border-white mr-4'
+              }
+            >
+              <FontAwesomeIcon
+                icon={faPlus}
+                className={'font-bold text-lg mr-2'}
+              />
               Watchlist
             </button>
-            <button className={'watch-now'}>Watch Now</button>
+            <button
+              className={'btn primary-btn w-full rounded-lg ml-4 font-bold'}
+            >
+              Watch Now
+            </button>
           </div>
         </div>
-        <div className={'right-side'}>
+        <div className={'relative min-w-3/10 h-full'}>
           <div
-            className={'background-image'}
+            className={'background-image !rounded-t-2xl !rounded-b-none h-5/6'}
             style={{
               backgroundImage: `url(https://image.tmdb.org/t/p/w500${content.poster_path})`,
-              borderTopRightRadius: '16px',
-              borderTopLeftRadius: '16px',
-              borderBottomLeftRadius: 0,
-              borderBottomRightRadius: 0,
             }}
           />
-          <div className={'top-rated-corner'}>Top rated</div>
+          <div
+            className={
+              'top-rated-corner absolute top-0 right-0 py-1 px-8 bg-primary-color font-bold text-black rounded-tr-2xl rounded-bl-2xl'
+            }
+          >
+            Top rated
+          </div>
         </div>
       </div>
     </div>
