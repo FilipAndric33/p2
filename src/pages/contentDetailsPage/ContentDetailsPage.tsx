@@ -58,7 +58,7 @@ const ContentDetailsPage: React.FC = () => {
 
       <button
         className={
-          'btn flex items-center text-lg font-bold bg-transparent max-w-[11vw] max-h-[8vh] back-home mb-[8vh] mt-[14vh] mx-[2vw] hover:text-primary-color'
+          'btn flex items-center text-lg font-bold bg-transparent max-w-[11vw] max-h-[8vh] back-home mb-[8vh] mt-[8vh] mx-[2vw] hover:text-primary-color'
         }
         onClick={handleBackClick}
       >
@@ -70,7 +70,7 @@ const ContentDetailsPage: React.FC = () => {
       </button>
       <div
         className={
-          'flex items-center content-details-content justify-center h-[60vh]'
+          'flex items-center content-details-content justify-center h-full'
         }
       >
         <div
@@ -109,7 +109,7 @@ const ContentDetailsPage: React.FC = () => {
         </div>
         <div className={'relative min-w-3/10 h-full'}>
           <div
-            className={'background-image !rounded-t-2xl !rounded-b-none'}
+            className={'background-image !rounded-t-2xl !rounded-b-none h-5/6'}
             style={{
               backgroundImage: `url(https://image.tmdb.org/t/p/w500${content.poster_path})`,
             }}
